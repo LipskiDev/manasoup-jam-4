@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://b72f4u4t8ivi4"]
+
+[ext_resource type="PackedScene" uid="uid://bha75fjyo6u0y" path="res://entities/Hazards/hazard.tscn" id="1_71w52"]
+[ext_resource type="Texture2D" uid="uid://bp0fiomuuqrxk" path="res://assets/Spike.png" id="2_6ruyf"]
+
+[node name="Spike" instance=ExtResource("1_71w52")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_6ruyf")
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(0, 4.5)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
