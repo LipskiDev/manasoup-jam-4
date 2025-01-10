@@ -1,0 +1,84 @@
+[gd_scene load_steps=10 format=3 uid="uid://c1bgs1uxil0b3"]
+
+[ext_resource type="Script" path="res://level/titel_screen.gd" id="1_35ql1"]
+[ext_resource type="Texture2D" uid="uid://dhwqc28dnryun" path="res://assets/ui/Logo.png" id="1_ejw2h"]
+[ext_resource type="Texture2D" uid="uid://d2a4y31jc14by" path="res://assets/ui/StartGame.png" id="2_o4a2q"]
+[ext_resource type="Texture2D" uid="uid://brrug4yokfl2c" path="res://assets/ui/Titel.png" id="3_fjnjb"]
+[ext_resource type="Texture2D" uid="uid://dljusnyo8vluc" path="res://assets/ui/Exit.png" id="4_ktjde"]
+[ext_resource type="Texture2D" uid="uid://dva88l50vw8ri" path="res://assets/ui/TitelPic.png" id="5_wnjl2"]
+
+[sub_resource type="Gradient" id="Gradient_deilx"]
+offsets = PackedFloat32Array(0.0649351, 1)
+colors = PackedColorArray(0.0721537, 0.218353, 0.18155, 1, 1, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_cytg5"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_jdaba"]
+color_ramp = SubResource("Gradient_deilx")
+noise = SubResource("FastNoiseLite_cytg5")
+
+[node name="TitelScreen" type="Node" node_paths=PackedStringArray("start_button", "exit_button")]
+script = ExtResource("1_35ql1")
+start_button = NodePath("MarginContainer/HBoxContainer/VBoxContainer/MenuOptions/StartButton")
+exit_button = NodePath("MarginContainer/HBoxContainer/VBoxContainer/MenuOptions/ExitButton")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("NoiseTexture2D_jdaba")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 120
+theme_override_constants/margin_top = 80
+theme_override_constants/margin_right = 120
+theme_override_constants/margin_bottom = 80
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Logo" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_ejw2h")
+
+[node name="Titel" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_fjnjb")
+
+[node name="MenuOptions" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="StartButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/MenuOptions"]
+layout_mode = 2
+icon = ExtResource("2_o4a2q")
+
+[node name="ExitButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/MenuOptions"]
+layout_mode = 2
+icon = ExtResource("4_ktjde")
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Pic" type="TextureRect" parent="MarginContainer/HBoxContainer/CenterContainer"]
+layout_mode = 2
+texture = ExtResource("5_wnjl2")
+
+[connection signal="focus_entered" from="MarginContainer/HBoxContainer/VBoxContainer/MenuOptions/StartButton" to="." method="_on_start_button_focus_entered"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/MenuOptions/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/MenuOptions/ExitButton" to="." method="_on_exit_button_pressed"]
