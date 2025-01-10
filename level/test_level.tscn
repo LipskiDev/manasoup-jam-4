@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dxcfxt5ah47jg"]
+[gd_scene load_steps=4 format=3 uid="uid://c8bwnyiwgu577"]
 
 [ext_resource type="PackedScene" uid="uid://bs3xto5f1nk4" path="res://entities/player/player.tscn" id="1_5cm3g"]
+[ext_resource type="PackedScene" uid="uid://b72f4u4t8ivi4" path="res://entities/Hazards/spike.tscn" id="2_0j6lj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4h3ke"]
 size = Vector2(248, 20)
@@ -17,3 +18,9 @@ position = Vector2(0, 34)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("RectangleShape2D_4h3ke")
+
+[node name="Spike" parent="." instance=ExtResource("2_0j6lj")]
+position = Vector2(51, 16)
+
+[node name="Spike2" parent="." instance=ExtResource("2_0j6lj")]
+position = Vector2(67, 16)
