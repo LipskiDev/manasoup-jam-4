@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://k0mdcgi2k6p2"]
+
+[ext_resource type="PackedScene" uid="uid://cj32vrhqk20ou" path="res://level/level.tscn" id="1_kgw6e"]
+[ext_resource type="PackedScene" uid="uid://ma6sqpiuno4f" path="res://entities/pickups/fruit.tscn" id="2_8yvxb"]
+[ext_resource type="PackedScene" path="res://entities/Hazards/trapdoor.tscn" id="3_d55k7"]
+[ext_resource type="PackedScene" uid="uid://ce7av5nqc7hmp" path="res://ui/ui.tscn" id="4_ea2y6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n5g74"]
+size = Vector2(254, 15)
+
+[node name="Test1" instance=ExtResource("1_kgw6e")]
+next_scene_name = "test_level"
+
+[node name="Fruit" parent="Fruits" index="0" instance=ExtResource("2_8yvxb")]
+position = Vector2(94, 12)
+
+[node name="Fruit2" parent="Fruits" index="1" instance=ExtResource("2_8yvxb")]
+position = Vector2(-50, 11)
+
+[node name="Fruit3" parent="Fruits" index="2" instance=ExtResource("2_8yvxb")]
+position = Vector2(-108, 9)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="0"]
+position = Vector2(0, 44.5)
+shape = SubResource("RectangleShape2D_n5g74")
+
+[node name="Trapdoor" parent="StaticBody2D/CollisionShape2D" index="0" instance=ExtResource("3_d55k7")]
+position = Vector2(147, 0.5)
+max_weight = 2
+
+[node name="Ui" parent="." index="4" instance=ExtResource("4_ea2y6")]
+visible = false
