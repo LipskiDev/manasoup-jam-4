@@ -16,6 +16,10 @@ config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 <<<<<<<HEADrun/main_scene="res://entities/pickups/fruit.tscn"
 
+[autoload]
+
+SignalBus="*res://global/signal_bus.gd"
+
 [input]
 
 ui_left={
