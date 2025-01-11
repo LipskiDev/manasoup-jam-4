@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bha75fjyo6u0y"]
+
+[ext_resource type="Script" path="res://hazard.gd" id="1_iob1j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lw8d0"]
+size = Vector2(14, 7)
+
+[node name="Hazard" type="Node2D"]
+script = ExtResource("1_iob1j")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+
+[node name="Area2D" type="Area2D" parent="."]
+texture_filter = 1
+collision_layer = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_lw8d0")

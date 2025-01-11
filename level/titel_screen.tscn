@@ -1,10 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://c1bgs1uxil0b3"]
+[gd_scene load_steps=9 format=3 uid="uid://c1bgs1uxil0b3"]
 
 [ext_resource type="Script" path="res://level/titel_screen.gd" id="1_35ql1"]
 [ext_resource type="Texture2D" uid="uid://dhwqc28dnryun" path="res://assets/ui/Logo.png" id="1_ejw2h"]
-[ext_resource type="Texture2D" uid="uid://d2a4y31jc14by" path="res://assets/ui/StartGame.png" id="2_o4a2q"]
 [ext_resource type="Texture2D" uid="uid://brrug4yokfl2c" path="res://assets/ui/Titel.png" id="3_fjnjb"]
-[ext_resource type="Texture2D" uid="uid://dljusnyo8vluc" path="res://assets/ui/Exit.png" id="4_ktjde"]
+[ext_resource type="FontFile" uid="uid://bvj3ypppodprb" path="res://ui/fonts/Xolonium-Regular.ttf" id="4_jllc5"]
 [ext_resource type="Texture2D" uid="uid://dva88l50vw8ri" path="res://assets/ui/TitelPic.png" id="5_wnjl2"]
 
 [sub_resource type="Gradient" id="Gradient_deilx"]
@@ -65,11 +64,17 @@ alignment = 1
 
 [node name="StartButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/MenuOptions"]
 layout_mode = 2
-icon = ExtResource("2_o4a2q")
+focus_neighbor_bottom = NodePath("../ExitButton")
+theme_override_colors/font_hover_color = Color(0, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_jllc5")
+text = "Start Game"
 
 [node name="ExitButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/MenuOptions"]
 layout_mode = 2
-icon = ExtResource("4_ktjde")
+focus_neighbor_top = NodePath("../StartButton")
+theme_override_colors/font_hover_color = Color(0, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_jllc5")
+text = "Exit Game"
 
 [node name="CenterContainer" type="CenterContainer" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
