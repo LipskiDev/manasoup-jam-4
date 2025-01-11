@@ -247,6 +247,7 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("stage0", "stage1", "stage2", "stage3", "stage4")]
+collision_layer = 5
 script = ExtResource("1_pl4tf")
 stage0 = NodePath("Stage0AnimatedSprite2D")
 stage1 = NodePath("Stage1AnimatedSprite2D")
