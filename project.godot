@@ -10,10 +10,11 @@ config_version=5
 
 [application]
 
-config/name="New Game Project"
+config/name="Worg"
 run/main_scene="res://level/test_level.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+<<<<<<<HEADrun/main_scene="res://entities/pickups/fruit.tscn"
 
 [input]
 
