@@ -1,10 +1,33 @@
-[gd_scene load_steps=9 format=3 uid="uid://c1bgs1uxil0b3"]
+[gd_scene load_steps=9 format=3 uid="uid://cpc87vjmwc1wx"]
 
-[ext_resource type="Script" path="res://level/titel_screen.gd" id="1_35ql1"]
 [ext_resource type="Texture2D" uid="uid://dhwqc28dnryun" path="res://assets/ui/Logo.png" id="1_ejw2h"]
 [ext_resource type="Texture2D" uid="uid://brrug4yokfl2c" path="res://assets/ui/Titel.png" id="3_fjnjb"]
 [ext_resource type="FontFile" uid="uid://bvj3ypppodprb" path="res://ui/fonts/Xolonium-Regular.ttf" id="4_jllc5"]
 [ext_resource type="Texture2D" uid="uid://dva88l50vw8ri" path="res://assets/ui/TitelPic.png" id="5_wnjl2"]
+
+[sub_resource type="GDScript" id="GDScript_kbskc"]
+script/source = "extends Node
+
+@export var start_button: Button
+@export var exit_button: Button
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+func _on_start_button_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://level/test_level.tscn\")
+
+
+func _on_exit_button_pressed() -> void:
+	get_tree().quit()
+"
 
 [sub_resource type="Gradient" id="Gradient_deilx"]
 offsets = PackedFloat32Array(0.0649351, 1)
@@ -17,7 +40,7 @@ color_ramp = SubResource("Gradient_deilx")
 noise = SubResource("FastNoiseLite_cytg5")
 
 [node name="TitelScreen" type="Node" node_paths=PackedStringArray("start_button", "exit_button")]
-script = ExtResource("1_35ql1")
+script = SubResource("GDScript_kbskc")
 start_button = NodePath("MarginContainer/HBoxContainer/VBoxContainer/MenuOptions/StartButton")
 exit_button = NodePath("MarginContainer/HBoxContainer/VBoxContainer/MenuOptions/ExitButton")
 
