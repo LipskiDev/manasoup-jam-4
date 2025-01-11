@@ -1,10 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cbe82o4qbrnld"]
+[gd_scene load_steps=5 format=3 uid="uid://bdxcig5vo4off"]
 
 [ext_resource type="Texture2D" uid="uid://16ndm6mharv5" path="res://assets/leaf.png" id="1_kwoy3"]
 [ext_resource type="Script" path="res://entities/Hazards/trapdoor.gd" id="1_o4rtb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gjebn"]
-size = Vector2(32, 27)
+size = Vector2(32, 12)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7edf6"]
 size = Vector2(32, 14)
@@ -19,7 +19,7 @@ region_enabled = true
 region_rect = Rect2(0, 0, 32, 16)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -7.5)
+position = Vector2(0, -15)
 shape = SubResource("RectangleShape2D_gjebn")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
@@ -29,3 +29,4 @@ position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_7edf6")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

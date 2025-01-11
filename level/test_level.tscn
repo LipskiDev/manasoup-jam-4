@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bs3xto5f1nk4" path="res://entities/player/player.tscn" id="1_e4wca"]
 [ext_resource type="PackedScene" path="res://entities/Hazards/trapdoor.tscn" id="1_qo5hj"]
 [ext_resource type="PackedScene" uid="uid://ma6sqpiuno4f" path="res://entities/pickups/fruit.tscn" id="2_dmgoi"]
-[ext_resource type="PackedScene" uid="uid://ce7av5nqc7hmp" path="res://ui/ui.tscn" id="3_rph6t"]
+[ext_resource type="PackedScene" path="res://ui/ui.tscn" id="3_rph6t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wwgpg"]
 size = Vector2(254, 15)
@@ -21,10 +21,6 @@ zoom = Vector2(2.54, 2.54)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(0, 44.5)
 shape = SubResource("RectangleShape2D_wwgpg")
-
-[node name="Trapdoor" parent="StaticBody2D/CollisionShape2D" instance=ExtResource("1_qo5hj")]
-position = Vector2(147, 0.5)
-max_weight = 2
 
 [node name="Player" parent="." instance=ExtResource("1_e4wca")]
 
