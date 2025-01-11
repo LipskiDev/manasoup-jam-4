@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bxwwr5lqe34pd" path="res://entities/pickups/pickup.tscn" id="1_c00pg"]
 [ext_resource type="Script" path="res://entities/pickups/fruit.gd" id="2_ylgd1"]
-[ext_resource type="Texture2D" uid="uid://c8liy2hcqyyej" path="res://assets/fruits/fruits.png" id="3_5ky4t"]
+[ext_resource type="Texture2D" uid="uid://dlttmiovywhw2" path="res://assets/fruits/fruits.png" id="3_5ky4t"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oy814"]
 radius = 15.4161

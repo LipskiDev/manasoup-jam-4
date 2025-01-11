@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://ce7av5nqc7hmp"]
 
 [ext_resource type="Script" path="res://level/titel_screen.gd" id="1_cs0gl"]
-[ext_resource type="FontFile" uid="uid://dbqgkj1dtwwx6" path="res://ui/fonts/Xolonium-Regular.ttf" id="2_vd318"]
-[ext_resource type="Texture2D" uid="uid://0oaq5s07ixb8" path="res://assets/ui/Logo.png" id="3_qt4w8"]
-[ext_resource type="Texture2D" uid="uid://bryeevkkd0w0k" path="res://assets/ui/Titel.png" id="4_ddbm1"]
-[ext_resource type="Texture2D" uid="uid://dkscpb5os41s8" path="res://assets/ui/TitelPic.png" id="5_6vbul"]
+[ext_resource type="FontFile" uid="uid://bvj3ypppodprb" path="res://ui/fonts/Xolonium-Regular.ttf" id="2_vd318"]
+[ext_resource type="Texture2D" uid="uid://dhwqc28dnryun" path="res://assets/ui/Logo.png" id="3_qt4w8"]
+[ext_resource type="Texture2D" uid="uid://brrug4yokfl2c" path="res://assets/ui/Titel.png" id="4_ddbm1"]
+[ext_resource type="Texture2D" uid="uid://dva88l50vw8ri" path="res://assets/ui/TitelPic.png" id="5_6vbul"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_05wma"]
 content_margin_left = 5.0

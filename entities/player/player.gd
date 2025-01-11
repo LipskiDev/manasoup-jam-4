@@ -85,14 +85,13 @@ func update_jump_strength() -> void:
 
 func update_sprite():
 	sprite.hide()
-	print(sprite)
 	match current_fruits:
 		0:
 			sprite = stage0
-			print(0)
 		1:
 			sprite = stage1
-			print(1)
+		2:
+			sprite = stage2
 		_:
 			print("HURENSOHN")
 	sprite.show()
