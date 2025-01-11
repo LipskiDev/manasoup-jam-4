@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://cf5v3objk3tjx"]
+
+[ext_resource type="Texture2D" uid="uid://pyu5pwrbsrdc" path="res://assets/finish_tree.png" id="1_8lxgq"]
+[ext_resource type="Script" path="res://entities/pickups/finish.gd" id="1_ifq54"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fj81w"]
+size = Vector2(55.0057, 62.8424)
+
+[node name="Finish" type="Area2D"]
+script = ExtResource("1_ifq54")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 3
+texture = ExtResource("1_8lxgq")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.382962, 4.49917)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_fj81w")
+
+[node name="FinishTimer" type="Timer" parent="."]
+wait_time = 4.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="timeout" from="FinishTimer" to="." method="_on_finish_timer_timeout"]

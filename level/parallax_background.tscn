@@ -1,25 +1,39 @@
-[gd_scene load_steps=7 format=3 uid="uid://cg4ly1gbfik34"]
+[gd_scene load_steps=8 format=4 uid="uid://cg4ly1gbfik34"]
 
-[ext_resource type="PackedScene" path="res://entities/Hazards/trapdoor.tscn" id="1_55dbt"]
 [ext_resource type="PackedScene" uid="uid://bs3xto5f1nk4" path="res://entities/player/player.tscn" id="2_640ht"]
 [ext_resource type="PackedScene" uid="uid://ma6sqpiuno4f" path="res://entities/pickups/fruit.tscn" id="3_v0ic5"]
 [ext_resource type="PackedScene" uid="uid://ce7av5nqc7hmp" path="res://ui/ui.tscn" id="4_y0lhj"]
-[ext_resource type="Texture2D" uid="uid://b511lg7w0mexi" path="res://assets/background/background.png" id="5_wup08"]
+[ext_resource type="Texture2D" uid="uid://dh3pdmiq8od6g" path="res://assets/background/background.png" id="5_wup08"]
+[ext_resource type="Texture2D" uid="uid://4svbby6hhlg0" path="res://assets/level_tileset.png" id="6_ql8xu"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7om0g"]
-size = Vector2(1e+06, 15)
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hhl2x"]
+texture = ExtResource("6_ql8xu")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
+3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
+
+[sub_resource type="TileSet" id="TileSet_yrl6c"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_hhl2x")
 
 [node name="ParallaxBackground" type="Node2D"]
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(0, 44.5)
-shape = SubResource("RectangleShape2D_7om0g")
-
-[node name="Trapdoor" parent="StaticBody2D/CollisionShape2D" instance=ExtResource("1_55dbt")]
-position = Vector2(147, -21.5)
-max_weight = 2
 
 [node name="Player" parent="." instance=ExtResource("2_640ht")]
 
@@ -29,22 +43,31 @@ limit_smoothed = true
 position_smoothing_enabled = true
 
 [node name="Fruit" parent="." instance=ExtResource("3_v0ic5")]
-position = Vector2(94, 12)
+position = Vector2(172, -4)
 
 [node name="Fruit2" parent="." instance=ExtResource("3_v0ic5")]
-position = Vector2(-50, 11)
+position = Vector2(399, -4)
 
 [node name="Fruit3" parent="." instance=ExtResource("3_v0ic5")]
-position = Vector2(-108, 9)
+position = Vector2(285, -3)
+
+[node name="Fruit4" parent="." instance=ExtResource("3_v0ic5")]
+position = Vector2(507, -3)
 
 [node name="Ui" parent="." instance=ExtResource("4_y0lhj")]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-texture_filter = 3
 motion_scale = Vector2(0.1, 0.1)
-motion_offset = Vector2(300, 200)
+motion_offset = Vector2(300, 100)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+modulate = Color(0.505344, 0.505344, 0.505344, 1)
+self_modulate = Color(1, 1, 1, 0.666667)
 texture = ExtResource("5_wup08")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+texture_filter = 1
+tile_map_data = PackedByteArray("AAD9/wEAAAABAAIAAAD+/wEAAAACAAIAAAD//wEAAAACAAIAAAAAAAEAAAACAAIAAAABAAEAAAACAAIAAAACAAEAAAACAAIAAAADAAEAAAACAAIAAAAEAAEAAAACAAIAAAD9/wAAAAABAAEAAAD9////AAABAAEAAAD9//7/AAABAAEAAAD9//3/AAABAAEAAAAFAAEAAAADAAIAAAAFAAAAAAADAAEAAAAFAP//AAADAAEAAAAFAP7/AAADAAEAAAAFAP3/AAADAAAAAAAGAP3/AAAEAAAAAAAHAP3/AAABAAAAAAAHAP7/AAABAAEAAAAHAP//AAABAAEAAAAHAAAAAAABAAEAAAAHAAEAAAABAAIAAAAIAAEAAAACAAIAAAAJAAEAAAACAAIAAAAKAAEAAAACAAIAAAALAAEAAAACAAIAAAAMAAAAAAADAAEAAAAMAAEAAAADAAIAAAAMAP//AAADAAEAAAAMAP7/AAADAAAAAAANAP7/AAAEAAAAAAAOAP7/AAABAAAAAAAOAP//AAABAAEAAAAOAAAAAAABAAEAAAAOAAEAAAABAAIAAAAPAAEAAAACAAIAAAAQAAEAAAACAAIAAAARAAEAAAACAAIAAAASAAEAAAACAAIAAAATAP//AAADAAAAAAATAAAAAAADAAEAAAATAAEAAAADAAIAAAAUAP//AAACAAIAAAAVAP//AAABAAAAAAAVAAAAAAABAAEAAAAVAAEAAAABAAIAAAAWAAEAAAACAAIAAAAXAAEAAAACAAIAAAAYAAEAAAACAAIAAAAZAAEAAAACAAIAAAAaAAEAAAADAAIAAAAaAAAAAAADAAAAAAAbAAAAAAAEAAAAAAAcAAAAAAABAAAAAAAcAAEAAAABAAIAAAAdAAEAAAACAAIAAAAeAAEAAAACAAIAAAAfAAEAAAACAAIAAAAgAAEAAAACAAIAAAAhAAEAAAACAAIAAAAiAAAAAAADAAEAAAAiAAEAAAADAAIAAAAiAP//AAADAAEAAAAiAP7/AAADAAEAAAAiAP3/AAADAAEAAAAiAPz/AAADAAEAAAD9//z/AAABAAAAAAD8//z/AAAAAAAAAAD7//z/AAAAAAAAAAD6//z/AAAAAAAAAAD5//z/AAAAAAAAAAA=")
+tile_set = SubResource("TileSet_yrl6c")

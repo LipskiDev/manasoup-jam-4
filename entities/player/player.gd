@@ -4,7 +4,7 @@ extends CharacterBody2D
 var SPEED_MAX = 300.0
 var CURRENT_SPEED = SPEED_MAX
 
-var JUMP_MAX: float = -400
+var JUMP_MAX: float = -360
 var JUMP_VELOCITY: float = JUMP_MAX
 
 var current_fruits : int = 0:
@@ -25,6 +25,8 @@ func _init() -> void:
 func _ready() -> void:
 	SignalBus.fruit_eaten.connect(_on_fruit_eaten)
 	SignalBus.trapdoor_entered.connect(_on_trapdoor_entered)
+	SignalBus.finish_entered.connect(_on_finish_entered)
+	SignalBus.finished.connect(_on_finished)
 	sprite = stage0
 	sprite.show()
 
@@ -72,27 +74,26 @@ func update_jump_strength() -> void:
 	if current_fruits == 0:
 		CURRENT_SPEED = SPEED_MAX
 	elif current_fruits == 1:
-		CURRENT_SPEED = SPEED_MAX / 1.5
+		CURRENT_SPEED = SPEED_MAX / 1.2
 	else:
-		CURRENT_SPEED = SPEED_MAX / current_fruits
+		CURRENT_SPEED = SPEED_MAX / current_fruits * 1.5
 	
 	if current_fruits == 0:
 		JUMP_VELOCITY = JUMP_MAX
 	elif current_fruits == 1:
-		JUMP_VELOCITY = JUMP_MAX / 1.5
+		JUMP_VELOCITY = JUMP_MAX / 1.2
 	else:
-		JUMP_VELOCITY = JUMP_MAX / current_fruits
+		JUMP_VELOCITY = JUMP_MAX / current_fruits * 1.5
 
 func update_sprite():
 	sprite.hide()
-	print(sprite)
 	match current_fruits:
 		0:
 			sprite = stage0
-			print(0)
 		1:
 			sprite = stage1
-			print(1)
+		2:
+			sprite = stage2
 		_:
 			print("HURENSOHN")
 	sprite.show()
@@ -106,3 +107,10 @@ func _on_fruit_eaten():
 	
 func _on_trapdoor_entered():
 	SignalBus.weight_on_trapdoor.emit(current_fruits)
+	
+func _on_finish_entered():
+	SignalBus.current_weight.emit(current_fruits)
+	
+func _on_finished():
+	sprite.hide()
+		

@@ -15,6 +15,10 @@ next_scene_name = "test_level"
 [node name="Fruit" parent="Fruits" index="0" instance=ExtResource("2_8yvxb")]
 position = Vector2(103, 14)
 
+[node name="Finish" parent="Fruits/Fruit" index="2" instance=ExtResource("3_gv5eo")]
+position = Vector2(-57, -9)
+fruit_goal = 3
+
 [node name="Fruit2" parent="Fruits" index="1" instance=ExtResource("2_8yvxb")]
 position = Vector2(-50, 11)
 
@@ -31,9 +35,5 @@ shape = SubResource("RectangleShape2D_n5g74")
 position = Vector2(147, 0.5)
 max_weight = 2
 
-[node name="Ui" parent="." index="4" node_paths=PackedStringArray("fruit_label") instance=ExtResource("4_ea2y6")]
+[node name="Ui" parent="." index="4" instance=ExtResource("4_ea2y6")]
 visible = false
-
-[node name="Finish" parent="." index="5" instance=ExtResource("3_gv5eo")]
-position = Vector2(48, 4)
-fruit_goal = 3

@@ -6,7 +6,8 @@ signal trapdoor_entered
 signal weight_on_trapdoor(weight)
 signal current_weight(weight)
 signal change_level(name: String) # just the name e.g. "test_level"
-signal reset_level()
+signal finish_entered
+signal finished #when worg is on finished and obese enough
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
