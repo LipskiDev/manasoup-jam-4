@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://bs3xto5f1nk4" path="res://entities/player/player.tscn" id="2_640ht"]
 [ext_resource type="PackedScene" uid="uid://ma6sqpiuno4f" path="res://entities/pickups/fruit.tscn" id="3_v0ic5"]
-[ext_resource type="Texture2D" uid="uid://h3mtd2h1wb4u" path="res://assets/background/background.png" id="5_wup08"]
-[ext_resource type="Texture2D" uid="uid://ry3ji6m34kgc" path="res://assets/level_tileset.png" id="6_ql8xu"]
+[ext_resource type="Texture2D" uid="uid://cpj7ekg3kxa46" path="res://assets/background/background.png" id="5_wup08"]
+[ext_resource type="Texture2D" uid="uid://cwn1ovmfsqfxa" path="res://assets/level_tileset.png" id="6_ql8xu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hhl2x"]
 texture = ExtResource("6_ql8xu")
