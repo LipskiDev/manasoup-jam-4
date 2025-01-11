@@ -16,6 +16,7 @@ var current_fruits : int = 0:
 @export var stage1: AnimatedSprite2D
 @export var stage2: AnimatedSprite2D
 @export var stage3: AnimatedSprite2D
+@export var stage4: AnimatedSprite2D
 
 var sprite: AnimatedSprite2D
 
@@ -94,6 +95,10 @@ func update_sprite():
 			sprite = stage1
 		2:
 			sprite = stage2
+		3:
+			sprite = stage3
+		4:
+			sprite = stage4
 		_:
 			print("HURENSOHN")
 	sprite.show()

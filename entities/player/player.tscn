@@ -1,12 +1,14 @@
-[gd_scene load_steps=27 format=3 uid="uid://bs3xto5f1nk4"]
+[gd_scene load_steps=40 format=3 uid="uid://bs3xto5f1nk4"]
 
 [ext_resource type="Script" path="res://entities/player/player.gd" id="1_pl4tf"]
-[ext_resource type="Texture2D" uid="uid://cqbjcmyeww5o8" path="res://assets/raupe/stage1/jump-Sheet.png" id="2_7f1pu"]
-[ext_resource type="Texture2D" uid="uid://cf2r0yfliaxoq" path="res://assets/raupe/stage0/jump-Sheet.png" id="2_d4kuk"]
-[ext_resource type="Texture2D" uid="uid://bi473lcepgruu" path="res://assets/raupe/stage0/walk-Sheet.png" id="3_11yhb"]
-[ext_resource type="Texture2D" uid="uid://b3vsomiusogre" path="res://assets/raupe/stage1/walk-Sheet.png" id="3_ud1qt"]
-[ext_resource type="Texture2D" uid="uid://cxf6824srkujt" path="res://assets/raupe/stage2/jump-Sheet.png" id="6_x6jd2"]
-[ext_resource type="Texture2D" uid="uid://bq5l2pfqmf3sb" path="res://assets/raupe/stage2/walk-Sheet.png" id="7_o4ggf"]
+[ext_resource type="Texture2D" uid="uid://04fn0iygki15" path="res://assets/raupe/stage1/jump-Sheet.png" id="2_7f1pu"]
+[ext_resource type="Texture2D" uid="uid://bsnxgvo5dqydt" path="res://assets/raupe/stage0/jump-Sheet.png" id="2_d4kuk"]
+[ext_resource type="Texture2D" uid="uid://bqdji5wd3akev" path="res://assets/raupe/stage0/walk-Sheet.png" id="3_11yhb"]
+[ext_resource type="Texture2D" uid="uid://4h7oyihe4e6r" path="res://assets/raupe/stage1/walk-Sheet.png" id="3_ud1qt"]
+[ext_resource type="Texture2D" uid="uid://wnxdmmh1rjub" path="res://assets/raupe/stage2/jump-Sheet.png" id="6_x6jd2"]
+[ext_resource type="Texture2D" uid="uid://ccpssespuhli4" path="res://assets/raupe/stage2/walk-Sheet.png" id="7_o4ggf"]
+[ext_resource type="Texture2D" uid="uid://c41bwokreiovg" path="res://assets/raupe/stage3/walk-Sheet.png" id="8_yu2ia"]
+[ext_resource type="Texture2D" uid="uid://cfglxy0payhty" path="res://assets/raupe/stage4/walk-Sheet.png" id="9_xegj1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r5ri6"]
 size = Vector2(32, 16)
@@ -155,11 +157,102 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("stage0", "stage1", "stage2")]
+[sub_resource type="AtlasTexture" id="AtlasTexture_pqndu"]
+atlas = ExtResource("8_yu2ia")
+region = Rect2(0, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l3bgf"]
+atlas = ExtResource("8_yu2ia")
+region = Rect2(128, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vjtq5"]
+atlas = ExtResource("8_yu2ia")
+region = Rect2(0, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_csuxp"]
+atlas = ExtResource("8_yu2ia")
+region = Rect2(64, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xfp88"]
+atlas = ExtResource("8_yu2ia")
+region = Rect2(128, 0, 64, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hnexb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pqndu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l3bgf")
+}],
+"loop": false,
+"name": &"jump",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vjtq5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_csuxp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xfp88")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 4.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cdcyn"]
+atlas = ExtResource("9_xegj1")
+region = Rect2(0, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dl2vr"]
+atlas = ExtResource("9_xegj1")
+region = Rect2(64, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wnil0"]
+atlas = ExtResource("9_xegj1")
+region = Rect2(0, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lhpqe"]
+atlas = ExtResource("9_xegj1")
+region = Rect2(64, 0, 64, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1awg4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cdcyn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dl2vr")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wnil0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lhpqe")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 3.0
+}]
+
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("stage0", "stage1", "stage2", "stage3", "stage4")]
 script = ExtResource("1_pl4tf")
 stage0 = NodePath("Stage0AnimatedSprite2D")
 stage1 = NodePath("Stage1AnimatedSprite2D")
 stage2 = NodePath("Stage2AnimatedSprite2D")
+stage3 = NodePath("Stage3AnimatedSprite2D")
+stage4 = NodePath("Stage4AnimatedSprite2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_r5ri6")
@@ -183,4 +276,18 @@ visible = false
 texture_filter = 3
 position = Vector2(0, -5)
 sprite_frames = SubResource("SpriteFrames_uutbp")
+animation = &"walk"
+
+[node name="Stage3AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+texture_filter = 3
+position = Vector2(0, -5)
+sprite_frames = SubResource("SpriteFrames_hnexb")
+animation = &"walk"
+
+[node name="Stage4AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+texture_filter = 3
+position = Vector2(0, -5)
+sprite_frames = SubResource("SpriteFrames_1awg4")
 animation = &"walk"
