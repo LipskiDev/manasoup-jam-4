@@ -18,3 +18,5 @@ func _on_body_entered(body: Node2D) -> void:
 func _on_current_weight(weight):
 	if weight > max_weight:
 		$StaticBody2D/CollisionShape2D.set_deferred("disabled", true)
+		$Sprite2D.region_rect.position.y = 16
+		$Sprite2D.region_rect.size.y = 32
