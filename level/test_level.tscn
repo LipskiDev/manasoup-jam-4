@@ -1,14 +1,11 @@
-<<<<<<< HEAD
 [gd_scene load_steps=4 format=3 uid="uid://dxcfxt5ah47jg"]
 
 [ext_resource type="PackedScene" uid="uid://bs3xto5f1nk4" path="res://entities/player/player.tscn" id="1_5cm3g"]
 [ext_resource type="PackedScene" uid="uid://ma6sqpiuno4f" path="res://entities/pickups/fruit.tscn" id="2_fdmj8"]
-=======
 [gd_scene load_steps=4 format=3 uid="uid://c8bwnyiwgu577"]
 
 [ext_resource type="PackedScene" uid="uid://bs3xto5f1nk4" path="res://entities/player/player.tscn" id="1_5cm3g"]
 [ext_resource type="PackedScene" uid="uid://b72f4u4t8ivi4" path="res://entities/Hazards/spike.tscn" id="2_0j6lj"]
->>>>>>> 84f87d4c798647511237404ac9cc677d81fac75d
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4h3ke"]
 size = Vector2(248, 20)
@@ -26,13 +23,11 @@ position = Vector2(0, 34)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("RectangleShape2D_4h3ke")
 
-<<<<<<< HEAD
 [node name="Fruit" parent="." instance=ExtResource("2_fdmj8")]
 position = Vector2(74, 1)
-=======
+
 [node name="Spike" parent="." instance=ExtResource("2_0j6lj")]
 position = Vector2(51, 16)
 
 [node name="Spike2" parent="." instance=ExtResource("2_0j6lj")]
 position = Vector2(67, 16)
->>>>>>> 84f87d4c798647511237404ac9cc677d81fac75d
