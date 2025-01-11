@@ -1,15 +1,13 @@
 extends CanvasLayer
 
 @export var fruit_label: Label
-var fruits: int = 0
 
 func _ready() -> void:
 	fruit_label.text = "Fruits: 0"
-	SignalBus.fruit_eaten.connect(update_fruit_label)
+	SignalBus.current_weight.connect(update_fruit_label)
 
-func update_fruit_label():
-	fruits = fruits + 1
-	fruit_label.text = "Fruits: " + str(fruits)
+func update_fruit_label(text):
+	fruit_label.text = "Fruits: " + str(text)
 	fruit_label.show()
 
 
