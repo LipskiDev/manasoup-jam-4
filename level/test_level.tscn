@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dyrg5iwxqh2og"]
+
+[ext_resource type="PackedScene" uid="uid://bs3xto5f1nk4" path="res://entities/player/player.tscn" id="1_e4wca"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wwgpg"]
+size = Vector2(254, 15)
+
+[node name="TestLevel" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2.54, 2.54)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 44.5)
+shape = SubResource("RectangleShape2D_wwgpg")
+
+[node name="Player" parent="." instance=ExtResource("1_e4wca")]
