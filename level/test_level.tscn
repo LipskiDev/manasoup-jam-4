@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://c8bwnyiwgu577"]
+[gd_scene load_steps=6 format=3 uid="uid://3xg4eujnifi3"]
 
-[ext_resource type="Script" path="res://level/level.gd" id="1_cjmxi"]
 [ext_resource type="PackedScene" uid="uid://bs3xto5f1nk4" path="res://entities/player/player.tscn" id="1_e4wca"]
-[ext_resource type="PackedScene" path="res://entities/Hazards/trapdoor.tscn" id="1_qo5hj"]
+[ext_resource type="PackedScene" uid="uid://bdxcig5vo4off" path="res://entities/Hazards/trapdoor.tscn" id="1_qo5hj"]
 [ext_resource type="PackedScene" uid="uid://ma6sqpiuno4f" path="res://entities/pickups/fruit.tscn" id="2_dmgoi"]
 [ext_resource type="PackedScene" path="res://ui/ui.tscn" id="3_rph6t"]
 
@@ -10,8 +9,6 @@
 size = Vector2(254, 15)
 
 [node name="TestLevel" type="Node2D"]
-script = ExtResource("1_cjmxi")
-next_scene_name = "test_1"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2.54, 2.54)
@@ -24,15 +21,23 @@ shape = SubResource("RectangleShape2D_wwgpg")
 
 [node name="Player" parent="." instance=ExtResource("1_e4wca")]
 
-[node name="Ui" parent="." instance=ExtResource("3_rph6t")]
-
-[node name="Fruits" type="Node" parent="."]
-
-[node name="Fruit" parent="Fruits" instance=ExtResource("2_dmgoi")]
+[node name="Fruit" parent="." instance=ExtResource("2_dmgoi")]
 position = Vector2(94, 12)
 
-[node name="Fruit2" parent="Fruits" instance=ExtResource("2_dmgoi")]
+[node name="Fruit2" parent="." instance=ExtResource("2_dmgoi")]
 position = Vector2(-50, 11)
 
-[node name="Fruit3" parent="Fruits" instance=ExtResource("2_dmgoi")]
+[node name="Fruit3" parent="." instance=ExtResource("2_dmgoi")]
 position = Vector2(-108, 9)
+
+[node name="Ui" parent="." instance=ExtResource("3_rph6t")]
+
+[node name="Trapdoor" parent="." instance=ExtResource("1_qo5hj")]
+position = Vector2(147, 45)
+max_weight = 2
+metadata/_edit_group_ = true
+
+[node name="Trapdoor2" parent="." instance=ExtResource("1_qo5hj")]
+position = Vector2(-147, 45)
+max_weight = 2
+metadata/_edit_group_ = true

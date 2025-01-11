@@ -16,7 +16,7 @@ func _on_body_exited(body: Node2D) -> void:
 	stepped_on = false
 
 
-func _on_current_weight(weight):
+func _on_weight_on_trapdoor(weight):
 	if weight > max_weight:
 		$StaticBody2D/CollisionShape2D.set_deferred("disabled", true)
 		$Sprite2D.region_rect.position.y = 16

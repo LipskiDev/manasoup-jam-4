@@ -1,10 +1,10 @@
 [gd_scene load_steps=19 format=3 uid="uid://bs3xto5f1nk4"]
 
 [ext_resource type="Script" path="res://entities/player/player.gd" id="1_pl4tf"]
-[ext_resource type="Texture2D" uid="uid://cqbjcmyeww5o8" path="res://assets/raupe/stage1/jump-Sheet.png" id="2_7f1pu"]
-[ext_resource type="Texture2D" uid="uid://cf2r0yfliaxoq" path="res://assets/raupe/stage0/jump-Sheet.png" id="2_d4kuk"]
-[ext_resource type="Texture2D" uid="uid://bi473lcepgruu" path="res://assets/raupe/stage0/walk-Sheet.png" id="3_11yhb"]
-[ext_resource type="Texture2D" uid="uid://b3vsomiusogre" path="res://assets/raupe/stage1/walk-Sheet.png" id="3_ud1qt"]
+[ext_resource type="Texture2D" uid="uid://6mx2epmb5ejm" path="res://assets/raupe/stage1/jump-Sheet.png" id="2_7f1pu"]
+[ext_resource type="Texture2D" uid="uid://c1ga1b3mad8g3" path="res://assets/raupe/stage0/jump-Sheet.png" id="2_d4kuk"]
+[ext_resource type="Texture2D" uid="uid://cqmwpfibc674v" path="res://assets/raupe/stage0/walk-Sheet.png" id="3_11yhb"]
+[ext_resource type="Texture2D" uid="uid://bfey4pec1nryx" path="res://assets/raupe/stage1/walk-Sheet.png" id="3_ud1qt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r5ri6"]
 size = Vector2(32, 16)
