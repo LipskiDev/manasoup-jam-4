@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=4 uid="uid://be6ndve7vgit8"]
+[gd_scene load_steps=5 format=4 uid="uid://807slcjpf0bt"]
 
-[ext_resource type="PackedScene" uid="uid://bgq8jn8opptjx" path="res://level/template_level.tscn" id="1_mrkfm"]
+[ext_resource type="PackedScene" uid="uid://b5gq86i0wmiek" path="res://level/template_level.tscn" id="1_mrkfm"]
 [ext_resource type="PackedScene" uid="uid://ma6sqpiuno4f" path="res://entities/pickups/fruit.tscn" id="2_no5sx"]
 [ext_resource type="PackedScene" uid="uid://roedj1oyntbx" path="res://entities/pickups/finish.tscn" id="3_llg3u"]
 [ext_resource type="PackedScene" uid="uid://bdxcig5vo4off" path="res://entities/Hazards/trapdoor.tscn" id="4_37vb4"]
