@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://3xg4eujnifi3"]
+[gd_scene load_steps=5 format=3 uid="uid://qokabljh2ng4"]
 
 [ext_resource type="PackedScene" uid="uid://bs3xto5f1nk4" path="res://entities/player/player.tscn" id="1_e4wca"]
 [ext_resource type="PackedScene" uid="uid://ma6sqpiuno4f" path="res://entities/pickups/fruit.tscn" id="2_dmgoi"]
+[ext_resource type="PackedScene" uid="uid://ce7av5nqc7hmp" path="res://ui/ui.tscn" id="3_rph6t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wwgpg"]
 size = Vector2(254, 15)
@@ -27,3 +28,5 @@ position = Vector2(-50, 11)
 
 [node name="Fruit3" parent="." instance=ExtResource("2_dmgoi")]
 position = Vector2(-108, 9)
+
+[node name="Ui" parent="." instance=ExtResource("3_rph6t")]
