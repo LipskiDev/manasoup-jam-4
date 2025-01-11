@@ -8,15 +8,6 @@ func _ready() -> void:
 	SignalBus.weight_on_trapdoor.connect(_on_weight_on_trapdoor)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-func open_trapdoor():
-	$StaticBody2D/CollisionShape2D.set_deferred("disabled", true)
-	$Sprite2D.region_rect.position.y = 16
-	$Sprite2D.region_rect.size.y = 32
-	
 func _on_body_entered(body: Node2D) -> void:
 	stepped_on = true
 	SignalBus.trapdoor_entered.emit()
@@ -24,6 +15,9 @@ func _on_body_entered(body: Node2D) -> void:
 func _on_body_exited(body: Node2D) -> void:
 	stepped_on = false
 
-func _on_weight_on_trapdoor(weight):
-	if weight > max_weight && stepped_on == true:
-		open_trapdoor()
+
+func _on_current_weight(weight):
+	if weight > max_weight:
+		$StaticBody2D/CollisionShape2D.set_deferred("disabled", true)
+		$Sprite2D.region_rect.position.y = 16
+		$Sprite2D.region_rect.size.y = 32

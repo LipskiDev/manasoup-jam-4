@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://cg4ly1gbfik34"]
+
+[ext_resource type="PackedScene" path="res://entities/Hazards/trapdoor.tscn" id="1_55dbt"]
+[ext_resource type="PackedScene" uid="uid://bs3xto5f1nk4" path="res://entities/player/player.tscn" id="2_640ht"]
+[ext_resource type="PackedScene" uid="uid://ma6sqpiuno4f" path="res://entities/pickups/fruit.tscn" id="3_v0ic5"]
+[ext_resource type="PackedScene" uid="uid://ce7av5nqc7hmp" path="res://ui/ui.tscn" id="4_y0lhj"]
+[ext_resource type="Texture2D" uid="uid://b511lg7w0mexi" path="res://assets/background/background.png" id="5_wup08"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7om0g"]
+size = Vector2(1e+06, 15)
+
+[node name="ParallaxBackground" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 44.5)
+shape = SubResource("RectangleShape2D_7om0g")
+
+[node name="Trapdoor" parent="StaticBody2D/CollisionShape2D" instance=ExtResource("1_55dbt")]
+position = Vector2(147, -21.5)
+max_weight = 2
+
+[node name="Player" parent="." instance=ExtResource("2_640ht")]
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(2.565, 2.565)
+limit_smoothed = true
+position_smoothing_enabled = true
+
+[node name="Fruit" parent="." instance=ExtResource("3_v0ic5")]
+position = Vector2(94, 12)
+
+[node name="Fruit2" parent="." instance=ExtResource("3_v0ic5")]
+position = Vector2(-50, 11)
+
+[node name="Fruit3" parent="." instance=ExtResource("3_v0ic5")]
+position = Vector2(-108, 9)
+
+[node name="Ui" parent="." instance=ExtResource("4_y0lhj")]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+texture_filter = 3
+motion_scale = Vector2(0.1, 0.1)
+motion_offset = Vector2(300, 200)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource("5_wup08")
