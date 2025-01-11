@@ -11,6 +11,9 @@ var current_fruits : int = 0
 
 func _init() -> void:
 	update_jump_strength()
+	
+func _ready() -> void:
+	SignalBus.fruit_eaten.connect(_on_fruit_eaten)
 
 
 func _physics_process(delta: float) -> void:
@@ -54,3 +57,7 @@ func update_jump_strength() -> void:
 		JUMP_VELOCITY = JUMP_MAX / 1.5
 	else:
 		JUMP_VELOCITY = JUMP_MAX / current_fruits
+
+func _on_fruit_eaten():
+	current_fruits += 1
+	update_jump_strength()
