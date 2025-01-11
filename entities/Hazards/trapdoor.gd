@@ -7,13 +7,9 @@ func _ready() -> void:
 	SignalBus.current_weight.connect(_on_current_weight)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-
 func _on_body_entered(body: Node2D) -> void:
 	SignalBus.trapdoor_entered.emit()
+
 
 func _on_current_weight(weight):
 	if weight > max_weight:
