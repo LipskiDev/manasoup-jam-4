@@ -20,7 +20,6 @@ shape = SubResource("RectangleShape2D_wwgpg")
 
 [node name="Trapdoor" parent="StaticBody2D/CollisionShape2D" instance=ExtResource("1_qo5hj")]
 position = Vector2(147, 0.5)
-max_weight = 2
 
 [node name="Player" parent="." instance=ExtResource("1_e4wca")]
 
