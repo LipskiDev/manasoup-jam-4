@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ce7av5nqc7hmp"]
+[gd_scene load_steps=14 format=3 uid="uid://ce7av5nqc7hmp"]
 
 [ext_resource type="Script" path="res://level/titel_screen.gd" id="1_cs0gl"]
 [ext_resource type="FontFile" uid="uid://bvj3ypppodprb" path="res://ui/fonts/Xolonium-Regular.ttf" id="2_vd318"]
@@ -9,6 +9,29 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_05wma"]
 content_margin_left = 5.0
 content_margin_top = 5.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rpc56"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_4euol")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_5hkbl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_pvi0w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_bafrv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_26xc8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Ui" type="CanvasLayer"]
 script = ExtResource("1_cs0gl")
@@ -55,6 +78,8 @@ theme_override_constants/separation = 10
 alignment = 1
 
 [node name="StartButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/MenuOptions"]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 focus_neighbor_bottom = NodePath("../ExitButton")
 theme_override_colors/font_hover_color = Color(0, 1, 1, 1)
@@ -76,5 +101,25 @@ size_flags_horizontal = 3
 layout_mode = 2
 texture = ExtResource("5_6vbul")
 
+[node name="ResetButton" type="Button" parent="."]
+offset_left = 1024.0
+offset_top = 52.0
+offset_right = 1032.0
+offset_bottom = 60.0
+scale = Vector2(8.504, 7.968)
+focus_mode = 0
+script = ExtResource("6_r8enw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ResetButton"]
+texture_filter = 1
+position = Vector2(3.99812, 3.89056)
+scale = Vector2(0.587959, 0.62751)
+sprite_frames = SubResource("SpriteFrames_rpc56")
+frame_progress = 0.587768
+speed_scale = 0.3
+
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/MenuOptions/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/MenuOptions/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="button_down" from="ResetButton" to="ResetButton" method="_on_button_down"]
+[connection signal="button_up" from="ResetButton" to="ResetButton" method="_on_button_up"]
+[connection signal="animation_finished" from="ResetButton/AnimatedSprite2D" to="ResetButton" method="_on_animated_sprite_2d_animation_finished"]
