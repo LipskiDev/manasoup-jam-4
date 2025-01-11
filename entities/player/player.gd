@@ -105,4 +105,4 @@ func _on_fruit_eaten():
 	SignalBus.current_weight.emit(current_fruits)
 	
 func _on_trapdoor_entered():
-	SignalBus.current_weight.emit(current_fruits)
+	SignalBus.weight_on_trapdoor.emit(current_fruits)
