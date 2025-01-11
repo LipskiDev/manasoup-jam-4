@@ -18,11 +18,12 @@ region_rect = Rect2(0, 0, 64, 64)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.382962, 4.49917)
-rotation = 1.5637
+rotation = 1.5708
 shape = SubResource("RectangleShape2D_fj81w")
 
-[node name="Timer" type="Timer" parent="."]
+[node name="FinishTimer" type="Timer" parent="."]
 wait_time = 4.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="timeout" from="FinishTimer" to="." method="_on_finish_timer_timeout"]

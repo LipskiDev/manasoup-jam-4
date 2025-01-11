@@ -35,5 +35,5 @@ max_weight = 2
 visible = false
 
 [node name="Finish" parent="." index="5" instance=ExtResource("3_gv5eo")]
-position = Vector2(46, 6)
+position = Vector2(48, 4)
 fruit_goal = 3

@@ -22,5 +22,12 @@ func _on_body_exited(body: Node2D) -> void:
 func _on_current_weight(weight):
 	if weight >= fruit_goal && stepped_on == true:
 		print("verpupp")
+		SignalBus.finished.emit()
 		$Sprite2D.region_rect.position.x = 64
-		#SignalBus.change_level.emit("parallax_background")
+		$FinishTimer.one_shot
+		
+
+
+func _on_finish_timer_timeout() -> void:
+	pass
+	#SignalBus.next_Level

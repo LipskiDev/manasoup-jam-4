@@ -26,6 +26,7 @@ func _ready() -> void:
 	SignalBus.fruit_eaten.connect(_on_fruit_eaten)
 	SignalBus.trapdoor_entered.connect(_on_trapdoor_entered)
 	SignalBus.finish_entered.connect(_on_finish_entered)
+	SignalBus.finished.connect(_on_finished)
 	sprite = stage0
 	sprite.show()
 
@@ -110,4 +111,7 @@ func _on_trapdoor_entered():
 	
 func _on_finish_entered():
 	SignalBus.current_weight.emit(current_fruits)
+	
+func _on_finished():
+	sprite.hide()
 		
