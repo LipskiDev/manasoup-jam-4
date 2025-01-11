@@ -1,0 +1,131 @@
+[gd_scene load_steps=14 format=3 uid="uid://ll8fi25pc1ys"]
+
+[ext_resource type="Script" path="res://global/veraltet/titel_screen.gd" id="1_uw7x4"]
+[ext_resource type="FontFile" uid="uid://dbqgkj1dtwwx6" path="res://ui/fonts/Xolonium-Regular.ttf" id="2_1g80s"]
+[ext_resource type="Texture2D" uid="uid://0oaq5s07ixb8" path="res://assets/ui/Logo.png" id="3_g7q6k"]
+[ext_resource type="Texture2D" uid="uid://bryeevkkd0w0k" path="res://assets/ui/Titel.png" id="4_20hbx"]
+[ext_resource type="Texture2D" uid="uid://dkscpb5os41s8" path="res://assets/ui/TitelPic.png" id="5_vfhn8"]
+[ext_resource type="Script" path="res://ui/reset_button.gd" id="6_53qim"]
+[ext_resource type="Texture2D" uid="uid://djy2hmck3vuua" path="res://assets/ui/resetButton/reset0.png" id="7_oaqi7"]
+[ext_resource type="Texture2D" uid="uid://bmcyrnd4t1tnj" path="res://assets/ui/resetButton/reset1.png" id="8_4hr45"]
+[ext_resource type="Texture2D" uid="uid://cx0pfsmf2is2x" path="res://assets/ui/resetButton/reset2.png" id="9_nprap"]
+[ext_resource type="Texture2D" uid="uid://6hk84t4fjp3j" path="res://assets/ui/resetButton/reset3.png" id="10_uujvk"]
+[ext_resource type="Texture2D" uid="uid://c6urwqinxdwp8" path="res://assets/ui/resetButton/reset4.png" id="11_diyba"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_05wma"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rpc56"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_oaqi7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_4hr45")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_nprap")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_uujvk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_diyba")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Ui" type="CanvasLayer" node_paths=PackedStringArray("start_button", "exit_button")]
+script = ExtResource("1_uw7x4")
+start_button = NodePath("MarginContainer/HBoxContainer/VBoxContainer/MenuOptions/StartButton")
+exit_button = NodePath("MarginContainer/HBoxContainer/VBoxContainer/MenuOptions/ExitButton")
+
+[node name="FruitLabel" type="Label" parent="."]
+offset_right = 121.0
+offset_bottom = 23.0
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_1g80s")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_05wma")
+text = "Fruits: "
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 120
+theme_override_constants/margin_top = 80
+theme_override_constants/margin_right = 120
+theme_override_constants/margin_bottom = 80
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Logo" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_g7q6k")
+
+[node name="Titel" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("4_20hbx")
+
+[node name="MenuOptions" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="StartButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/MenuOptions"]
+layout_mode = 2
+focus_neighbor_bottom = NodePath("../ExitButton")
+theme_override_colors/font_hover_color = Color(0, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_1g80s")
+text = "Start Game"
+
+[node name="ExitButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/MenuOptions"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../StartButton")
+theme_override_colors/font_hover_color = Color(0, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_1g80s")
+text = "Exit Game"
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Pic" type="TextureRect" parent="MarginContainer/HBoxContainer/CenterContainer"]
+layout_mode = 2
+texture = ExtResource("5_vfhn8")
+
+[node name="ResetButton" type="Button" parent="."]
+offset_left = 1024.0
+offset_top = 52.0
+offset_right = 1032.0
+offset_bottom = 60.0
+scale = Vector2(8.504, 7.968)
+focus_mode = 0
+script = ExtResource("6_53qim")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ResetButton"]
+texture_filter = 1
+position = Vector2(3.99812, 3.89056)
+scale = Vector2(0.587959, 0.62751)
+sprite_frames = SubResource("SpriteFrames_rpc56")
+frame_progress = 0.587768
+speed_scale = 0.3
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/MenuOptions/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/MenuOptions/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="button_down" from="ResetButton" to="ResetButton" method="_on_button_down"]
+[connection signal="button_up" from="ResetButton" to="ResetButton" method="_on_button_up"]
+[connection signal="animation_finished" from="ResetButton/AnimatedSprite2D" to="ResetButton" method="_on_animated_sprite_2d_animation_finished"]
