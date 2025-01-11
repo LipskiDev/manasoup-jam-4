@@ -24,7 +24,3 @@ func transition_to_level(level_name: String):
 
 func _on_change_level(level_name: String):
 	transition_to_level(level_name)
-
-
-func _on_timer_timeout() -> void:
-	SignalBus.change_level.emit("test_1")
