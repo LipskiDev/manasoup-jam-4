@@ -1,10 +1,9 @@
-[gd_scene load_steps=8 format=4 uid="uid://cg4ly1gbfik34"]
+[gd_scene load_steps=7 format=4 uid="uid://cg4ly1gbfik34"]
 
 [ext_resource type="PackedScene" uid="uid://bs3xto5f1nk4" path="res://entities/player/player.tscn" id="2_640ht"]
 [ext_resource type="PackedScene" uid="uid://ma6sqpiuno4f" path="res://entities/pickups/fruit.tscn" id="3_v0ic5"]
-[ext_resource type="PackedScene" uid="uid://ce7av5nqc7hmp" path="res://ui/ui.tscn" id="4_y0lhj"]
-[ext_resource type="Texture2D" uid="uid://dh3pdmiq8od6g" path="res://assets/background/background.png" id="5_wup08"]
-[ext_resource type="Texture2D" uid="uid://4svbby6hhlg0" path="res://assets/level_tileset.png" id="6_ql8xu"]
+[ext_resource type="Texture2D" uid="uid://h3mtd2h1wb4u" path="res://assets/background/background.png" id="5_wup08"]
+[ext_resource type="Texture2D" uid="uid://ry3ji6m34kgc" path="res://assets/level_tileset.png" id="6_ql8xu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hhl2x"]
 texture = ExtResource("6_ql8xu")
@@ -53,8 +52,6 @@ position = Vector2(285, -3)
 
 [node name="Fruit4" parent="." instance=ExtResource("3_v0ic5")]
 position = Vector2(507, -3)
-
-[node name="Ui" parent="." instance=ExtResource("4_y0lhj")]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
