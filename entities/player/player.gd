@@ -7,6 +7,7 @@ var CURRENT_SPEED = SPEED_MAX
 
 var JUMP_MAX: float = -360
 var JUMP_VELOCITY: float = JUMP_MAX
+var direction = 0
 
 var current_fruits : int = 0:
 	set(value):
@@ -55,8 +56,11 @@ func _physics_process(delta: float) -> void:
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction
-	direction = Input.get_axis("ui_left", "ui_right")
+	
+	if is_on_floor():
+		direction = Input.get_axis("ui_left", "ui_right")
+	else:
+		direction = direction * 15/16 + Input.get_axis("ui_left", "ui_right") / 16
 	
 	if direction:
 		velocity.x = direction * CURRENT_SPEED
