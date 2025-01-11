@@ -3,6 +3,7 @@ extends Node
 signal fruit_eaten
 
 signal trapdoor_entered
+signal weight_on_trapdoor(weight)
 signal current_weight(weight)
 signal change_level(name: String) # just the name e.g. "test_level"
 

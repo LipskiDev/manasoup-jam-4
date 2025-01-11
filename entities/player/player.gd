@@ -59,7 +59,6 @@ func update_jump_strength() -> void:
 	else:
 		JUMP_VELOCITY = JUMP_MAX / current_fruits
 
-
 # Signals
 
 func _on_fruit_eaten():
@@ -67,4 +66,4 @@ func _on_fruit_eaten():
 	update_jump_strength()
 	
 func _on_trapdoor_entered():
-	SignalBus.current_weight.emit(current_fruits)
+	SignalBus.weight_on_trapdoor.emit(current_fruits)
