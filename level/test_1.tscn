@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://k0mdcgi2k6p2"]
+[gd_scene load_steps=7 format=3 uid="uid://k0mdcgi2k6p2"]
 
 [ext_resource type="PackedScene" uid="uid://cj32vrhqk20ou" path="res://level/level.tscn" id="1_kgw6e"]
 [ext_resource type="PackedScene" uid="uid://ma6sqpiuno4f" path="res://entities/pickups/fruit.tscn" id="2_8yvxb"]
 [ext_resource type="PackedScene" path="res://entities/Hazards/trapdoor.tscn" id="3_d55k7"]
 [ext_resource type="PackedScene" uid="uid://ce7av5nqc7hmp" path="res://ui/ui.tscn" id="4_ea2y6"]
+[ext_resource type="Script" path="res://ui/ui.gd" id="5_cws3c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n5g74"]
 size = Vector2(254, 15)
@@ -30,5 +31,7 @@ shape = SubResource("RectangleShape2D_n5g74")
 position = Vector2(147, 0.5)
 max_weight = 2
 
-[node name="Ui" parent="." index="4" instance=ExtResource("4_ea2y6")]
+[node name="Ui" parent="." index="4" node_paths=PackedStringArray("fruit_label") instance=ExtResource("4_ea2y6")]
 visible = false
+script = ExtResource("5_cws3c")
+fruit_label = NodePath("FruitLabel")
