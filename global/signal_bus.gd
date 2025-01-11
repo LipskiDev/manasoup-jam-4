@@ -3,6 +3,7 @@ extends Node
 signal fruit_eaten
 
 signal trapdoor_entered
+signal weight_on_trapdoor(weight)
 signal current_weight(weight)
 
 # Called when the node enters the scene tree for the first time.
