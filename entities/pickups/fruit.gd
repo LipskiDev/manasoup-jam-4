@@ -13,6 +13,6 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	pass
 
-func _on_body_entered(body: Node2D) -> void:
+func _on_body_entered(_body: Node2D) -> void:
 	SignalBus.fruit_eaten.emit()
 	queue_free()
