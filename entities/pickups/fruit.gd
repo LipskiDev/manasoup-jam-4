@@ -21,5 +21,5 @@ func _on_area_entered(area: Area2D) -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	gets_eaten.emit()
+	SignalBus.fruit_eaten.emit()
 	queue_free()
