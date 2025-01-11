@@ -1,10 +1,16 @@
-[gd_scene load_steps=14 format=3 uid="uid://ce7av5nqc7hmp"]
+[gd_scene load_steps=14 format=3 uid="uid://ll8fi25pc1ys"]
 
-[ext_resource type="Script" path="res://level/titel_screen.gd" id="1_cs0gl"]
-[ext_resource type="FontFile" uid="uid://bvj3ypppodprb" path="res://ui/fonts/Xolonium-Regular.ttf" id="2_vd318"]
-[ext_resource type="Texture2D" uid="uid://dhwqc28dnryun" path="res://assets/ui/Logo.png" id="3_qt4w8"]
-[ext_resource type="Texture2D" uid="uid://brrug4yokfl2c" path="res://assets/ui/Titel.png" id="4_ddbm1"]
-[ext_resource type="Texture2D" uid="uid://dva88l50vw8ri" path="res://assets/ui/TitelPic.png" id="5_6vbul"]
+[ext_resource type="Script" path="res://global/veraltet/titel_screen.gd" id="1_uw7x4"]
+[ext_resource type="FontFile" uid="uid://dbqgkj1dtwwx6" path="res://ui/fonts/Xolonium-Regular.ttf" id="2_1g80s"]
+[ext_resource type="Texture2D" uid="uid://0oaq5s07ixb8" path="res://assets/ui/Logo.png" id="3_g7q6k"]
+[ext_resource type="Texture2D" uid="uid://bryeevkkd0w0k" path="res://assets/ui/Titel.png" id="4_20hbx"]
+[ext_resource type="Texture2D" uid="uid://dkscpb5os41s8" path="res://assets/ui/TitelPic.png" id="5_vfhn8"]
+[ext_resource type="Script" path="res://ui/reset_button.gd" id="6_53qim"]
+[ext_resource type="Texture2D" uid="uid://djy2hmck3vuua" path="res://assets/ui/resetButton/reset0.png" id="7_oaqi7"]
+[ext_resource type="Texture2D" uid="uid://bmcyrnd4t1tnj" path="res://assets/ui/resetButton/reset1.png" id="8_4hr45"]
+[ext_resource type="Texture2D" uid="uid://cx0pfsmf2is2x" path="res://assets/ui/resetButton/reset2.png" id="9_nprap"]
+[ext_resource type="Texture2D" uid="uid://6hk84t4fjp3j" path="res://assets/ui/resetButton/reset3.png" id="10_uujvk"]
+[ext_resource type="Texture2D" uid="uid://c6urwqinxdwp8" path="res://assets/ui/resetButton/reset4.png" id="11_diyba"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_05wma"]
 content_margin_left = 5.0
@@ -14,33 +20,35 @@ content_margin_top = 5.0
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("7_4euol")
+"texture": ExtResource("7_oaqi7")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_5hkbl")
+"texture": ExtResource("8_4hr45")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_pvi0w")
+"texture": ExtResource("9_nprap")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_bafrv")
+"texture": ExtResource("10_uujvk")
 }, {
 "duration": 1.0,
-"texture": ExtResource("11_26xc8")
+"texture": ExtResource("11_diyba")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }]
 
-[node name="Ui" type="CanvasLayer"]
-script = ExtResource("1_cs0gl")
+[node name="Ui" type="CanvasLayer" node_paths=PackedStringArray("start_button", "exit_button")]
+script = ExtResource("1_uw7x4")
+start_button = NodePath("MarginContainer/HBoxContainer/VBoxContainer/MenuOptions/StartButton")
+exit_button = NodePath("MarginContainer/HBoxContainer/VBoxContainer/MenuOptions/ExitButton")
 
 [node name="FruitLabel" type="Label" parent="."]
 offset_right = 121.0
 offset_bottom = 23.0
 size_flags_horizontal = 3
-theme_override_fonts/font = ExtResource("2_vd318")
+theme_override_fonts/font = ExtResource("2_1g80s")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_05wma")
 text = "Fruits: "
 
@@ -65,11 +73,11 @@ alignment = 1
 
 [node name="Logo" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-texture = ExtResource("3_qt4w8")
+texture = ExtResource("3_g7q6k")
 
 [node name="Titel" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-texture = ExtResource("4_ddbm1")
+texture = ExtResource("4_20hbx")
 
 [node name="MenuOptions" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
@@ -78,19 +86,17 @@ theme_override_constants/separation = 10
 alignment = 1
 
 [node name="StartButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/MenuOptions"]
-modulate = Color(1, 1, 1, 0)
-self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 focus_neighbor_bottom = NodePath("../ExitButton")
 theme_override_colors/font_hover_color = Color(0, 1, 1, 1)
-theme_override_fonts/font = ExtResource("2_vd318")
+theme_override_fonts/font = ExtResource("2_1g80s")
 text = "Start Game"
 
 [node name="ExitButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/MenuOptions"]
 layout_mode = 2
 focus_neighbor_top = NodePath("../StartButton")
 theme_override_colors/font_hover_color = Color(0, 1, 1, 1)
-theme_override_fonts/font = ExtResource("2_vd318")
+theme_override_fonts/font = ExtResource("2_1g80s")
 text = "Exit Game"
 
 [node name="CenterContainer" type="CenterContainer" parent="MarginContainer/HBoxContainer"]
@@ -99,7 +105,7 @@ size_flags_horizontal = 3
 
 [node name="Pic" type="TextureRect" parent="MarginContainer/HBoxContainer/CenterContainer"]
 layout_mode = 2
-texture = ExtResource("5_6vbul")
+texture = ExtResource("5_vfhn8")
 
 [node name="ResetButton" type="Button" parent="."]
 offset_left = 1024.0
@@ -108,7 +114,7 @@ offset_right = 1032.0
 offset_bottom = 60.0
 scale = Vector2(8.504, 7.968)
 focus_mode = 0
-script = ExtResource("6_r8enw")
+script = ExtResource("6_53qim")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ResetButton"]
 texture_filter = 1
