@@ -4,7 +4,7 @@ extends CharacterBody2D
 var SPEED_MAX = 300.0
 var CURRENT_SPEED = SPEED_MAX
 
-var JUMP_MAX: float = -400
+var JUMP_MAX: float = -360
 var JUMP_VELOCITY: float = JUMP_MAX
 
 var current_fruits : int = 0:
@@ -72,16 +72,16 @@ func update_jump_strength() -> void:
 	if current_fruits == 0:
 		CURRENT_SPEED = SPEED_MAX
 	elif current_fruits == 1:
-		CURRENT_SPEED = SPEED_MAX / 1.5
+		CURRENT_SPEED = SPEED_MAX / 1.2
 	else:
-		CURRENT_SPEED = SPEED_MAX / current_fruits
+		CURRENT_SPEED = SPEED_MAX / current_fruits * 1.5
 	
 	if current_fruits == 0:
 		JUMP_VELOCITY = JUMP_MAX
 	elif current_fruits == 1:
-		JUMP_VELOCITY = JUMP_MAX / 1.5
+		JUMP_VELOCITY = JUMP_MAX / 1.2
 	else:
-		JUMP_VELOCITY = JUMP_MAX / current_fruits
+		JUMP_VELOCITY = JUMP_MAX / current_fruits * 1.5
 
 func update_sprite():
 	sprite.hide()
