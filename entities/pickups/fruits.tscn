@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://dblvytkjsfpmt"]
+
+[ext_resource type="PackedScene" uid="uid://ma6sqpiuno4f" path="res://entities/pickups/fruit.tscn" id="1_1060m"]
+
+[node name="Fruits" type="Node2D"]
+
+[node name="FruitManager" type="Node2D" parent="."]
+position = Vector2(551, 277)
+
+[node name="Fruit" parent="FruitManager" instance=ExtResource("1_1060m")]
+
+[node name="Fruit3" parent="FruitManager" instance=ExtResource("1_1060m")]
+position = Vector2(266, 74)
+
+[node name="Fruit4" parent="FruitManager" instance=ExtResource("1_1060m")]
+position = Vector2(-121, -160)
+
+[node name="Fruit5" parent="FruitManager" instance=ExtResource("1_1060m")]
+position = Vector2(-363, -27)
+
+[node name="Fruit2" parent="FruitManager" instance=ExtResource("1_1060m")]
+position = Vector2(174, -168)
