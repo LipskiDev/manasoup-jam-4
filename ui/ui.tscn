@@ -1,10 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://bfy7oc4renck3"]
+[gd_scene load_steps=13 format=3 uid="uid://bfy7oc4renck3"]
 
 [ext_resource type="FontFile" uid="uid://ctd8ufd45h1c1" path="res://ui/fonts/Xolonium-Regular.ttf" id="1_lg8jy"]
 [ext_resource type="Texture2D" uid="uid://djtixhl5ibn7l" path="res://assets/ui/Logo.png" id="2_x4ogh"]
 [ext_resource type="Texture2D" uid="uid://cbahksjier72w" path="res://assets/ui/Titel.png" id="3_dw2dv"]
 [ext_resource type="Texture2D" uid="uid://decq3uqgwldej" path="res://assets/ui/TitelPic.png" id="4_6y5ii"]
-[ext_resource type="Script" path="res://ui/reset_button.gd" id="5_dhe3f"]
 [ext_resource type="Texture2D" uid="uid://neemictvo3im" path="res://assets/ui/resetButton/reset0.png" id="6_kbovd"]
 [ext_resource type="Texture2D" uid="uid://drt3a8ijlptc3" path="res://assets/ui/resetButton/reset1.png" id="7_8vkv4"]
 [ext_resource type="Texture2D" uid="uid://lxgtpj005luo" path="res://assets/ui/resetButton/reset2.png" id="8_7qjps"]
@@ -25,10 +24,13 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	pass
+	if $ResetButton.button_pressed || Input.is_action_pressed(\"reset\"):
+		$ResetButton/ResetSprite.play()
+		
+	if Input.is_action_just_released(\"reset\"):
+		$ResetButton/ResetSprite.stop()
 
 func _on_start_button_pressed() -> void:
-	SignalBus.change_level.emit('parallax_background')
 	$MainMenu.hide()
 	start_button.hide()
 
@@ -36,6 +38,21 @@ func _on_start_button_pressed() -> void:
 func _on_exit_button_pressed() -> void:
 	exit_button.hide()
 	
+
+	
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	SignalBus.reset_level.emit()
+	print(\"animation finished\")
+
+
+func _on_reset_button_button_down() -> void:
+	#$ResetButton/ResetSprite.play()
+	pass
+
+
+func _on_reset_button_button_up() -> void:
+	$ResetButton/ResetSprite.stop()
 "
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_05wma"]
@@ -60,9 +77,9 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("10_5idga")
 }],
-"loop": true,
+"loop": false,
 "name": &"default",
-"speed": 5.0
+"speed": 10.0
 }]
 
 [node name="Ui" type="CanvasLayer" node_paths=PackedStringArray("start_button", "exit_button")]
@@ -85,15 +102,14 @@ offset_right = 1032.0
 offset_bottom = 60.0
 scale = Vector2(8.504, 7.968)
 focus_mode = 0
-script = ExtResource("5_dhe3f")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ResetButton"]
+[node name="ResetSprite" type="AnimatedSprite2D" parent="ResetButton"]
 texture_filter = 1
 position = Vector2(3.99812, 3.89056)
 scale = Vector2(0.587959, 0.62751)
 sprite_frames = SubResource("SpriteFrames_rpc56")
 frame_progress = 0.587768
-speed_scale = 0.3
+speed_scale = 2.0
 
 [node name="MainMenu" type="Node2D" parent="."]
 position = Vector2(9, -5)
@@ -139,8 +155,8 @@ theme_override_colors/font_hover_color = Color(0, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_lg8jy")
 text = "Exit Game"
 
-[connection signal="button_down" from="ResetButton" to="ResetButton" method="_on_button_down"]
-[connection signal="button_up" from="ResetButton" to="ResetButton" method="_on_button_up"]
-[connection signal="animation_finished" from="ResetButton/AnimatedSprite2D" to="ResetButton" method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="button_down" from="ResetButton" to="." method="_on_reset_button_button_down"]
+[connection signal="button_up" from="ResetButton" to="." method="_on_reset_button_button_up"]
+[connection signal="animation_finished" from="ResetButton/ResetSprite" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="pressed" from="MainMenu/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="MainMenu/ExitButton" to="." method="_on_exit_button_pressed"]
