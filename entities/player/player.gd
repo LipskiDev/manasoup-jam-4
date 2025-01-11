@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+var shit_scene = preload("res://entities/pickups/shit.tscn")
 
 var SPEED_MAX = 300.0
 var CURRENT_SPEED = SPEED_MAX
@@ -12,6 +13,8 @@ var current_fruits : int = 0:
 	set(value):
 		current_fruits = value
 		update_sprite()
+		
+var can_shit = true
 
 @export var stage0: AnimatedSprite2D
 @export var stage1: AnimatedSprite2D
@@ -74,8 +77,19 @@ func _physics_process(delta: float) -> void:
 	if velocity.length() == 0:
 		sprite.stop()
 		
-	if velocity.x != 0:
-		sprite.flip_h = velocity.x < 0
+	
+	if velocity.x > 0:
+		$Sprite.scale.x = 1
+	elif velocity.x < 0:
+		$Sprite.scale.x = -1
+	
+	
+	
+	# shitting
+	if Input.is_action_just_pressed("shit"):
+		if current_fruits > 0 && can_shit:
+			shit()
+			
 
 
 func update_jump_strength() -> void:
@@ -108,8 +122,16 @@ func update_sprite():
 			sprite = stage4
 		_:
 			print("HURENSOHN")
+	
 	sprite.show()
 
+func shit():
+	current_fruits -= 1
+	update_jump_strength()
+	var shit = shit_scene
+	var instance = shit.instantiate()
+	instance.position = $Sprite/Ass.global_position
+	$"..".add_child(instance)
 # Signals
 
 func _on_fruit_eaten():
@@ -125,4 +147,3 @@ func _on_finish_entered():
 	
 func _on_finished():
 	sprite.hide()
-		

@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://chn2bis8g4tb2"]
+
+[ext_resource type="Texture2D" uid="uid://gnn0ei4x5gc5" path="res://assets/shite.png" id="2_kgs84"]
+
+[sub_resource type="GDScript" id="GDScript_0yo1y"]
+script/source = "extends RigidBody2D
+
+var frames
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	frames = $Sprite2D.texture.get_width() / $Sprite2D.region_rect.size.x
+	var random_index = randi_range(0, frames - 1)
+	$Sprite2D.region_rect.position.x = random_index * $Sprite2D.region_rect.size.x
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_brbmb"]
+size = Vector2(20, 16)
+
+[node name="Shit" type="RigidBody2D"]
+z_index = -1
+texture_filter = 3
+collision_layer = 128
+collision_mask = 128
+script = SubResource("GDScript_0yo1y")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_kgs84")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_brbmb")
