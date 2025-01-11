@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://qokabljh2ng4"]
+[gd_scene load_steps=5 format=3 uid="uid://3xg4eujnifi3"]
 
 [ext_resource type="PackedScene" uid="uid://bs3xto5f1nk4" path="res://entities/player/player.tscn" id="1_e4wca"]
 [ext_resource type="PackedScene" uid="uid://cbe82o4qbrnld" path="res://entities/Hazards/trapdoor.tscn" id="1_qo5hj"]
 [ext_resource type="PackedScene" uid="uid://ma6sqpiuno4f" path="res://entities/pickups/fruit.tscn" id="2_dmgoi"]
-[ext_resource type="PackedScene" uid="uid://ce7av5nqc7hmp" path="res://ui/ui.tscn" id="3_rph6t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wwgpg"]
 size = Vector2(254, 15)
@@ -21,7 +20,6 @@ shape = SubResource("RectangleShape2D_wwgpg")
 
 [node name="Trapdoor" parent="StaticBody2D/CollisionShape2D" instance=ExtResource("1_qo5hj")]
 position = Vector2(147, 0.5)
-max_weight = 2
 
 [node name="Player" parent="." instance=ExtResource("1_e4wca")]
 
@@ -33,5 +31,3 @@ position = Vector2(-50, 11)
 
 [node name="Fruit3" parent="." instance=ExtResource("2_dmgoi")]
 position = Vector2(-108, 9)
-
-[node name="Ui" parent="." instance=ExtResource("3_rph6t")]
