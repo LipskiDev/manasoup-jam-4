@@ -30,4 +30,4 @@ func _on_current_weight(weight):
 
 func _on_finish_timer_timeout() -> void:
 	pass
-	#SignalBus.next_Level
+	SignalBus.next_Level

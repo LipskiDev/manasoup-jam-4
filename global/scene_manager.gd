@@ -1,16 +1,20 @@
 extends Node2D
 
-const level_path = "res://level/"
+const level_path = "res://level/level"
+var level_idx = 0
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	transition_to_level("parallax_background")
-	SignalBus.change_level.connect(_on_change_level)
+	#start with level0
+	load_level(level_idx)
+	SignalBus.next_level.connect(_on_next_level)
 	SignalBus.reset_level.connect(_on_reset_level)
 	
 
-func transition_to_level(level_name: String):
+	
+func load_level(level_name: int):
+	
 	var path = "%s%s.tscn" % [level_path, level_name] 
 	
 	for node in $current_scene.get_children():
@@ -22,9 +26,20 @@ func transition_to_level(level_name: String):
 
 	$current_scene.add_child(node)
 
+func next_level():
+	level_idx += 1
+	load_level(level_idx)
+	
+	
+func _on_prev_level():
+	level_idx -= 1
+	load_level(level_idx)
+	
 
-func _on_change_level(level_name: String):
-	transition_to_level(level_name)
+func _on_next_level():
+	next_level()
 	
 func _on_reset_level():
-	transition_to_level("parallax_background")
+	print("ResetLevel")
+	load_level(level_idx)
+	
