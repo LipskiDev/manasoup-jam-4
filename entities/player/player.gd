@@ -14,7 +14,7 @@ var current_fruits : int = 0:
 		current_fruits = value
 		update_sprite()
 		
-var can_shit = true
+@export var can_shit = true
 
 @export var stage0: AnimatedSprite2D
 @export var stage1: AnimatedSprite2D
