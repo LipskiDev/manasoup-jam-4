@@ -1,14 +1,14 @@
 [gd_scene load_steps=13 format=3 uid="uid://bfy7oc4renck3"]
 
-[ext_resource type="FontFile" uid="uid://ctd8ufd45h1c1" path="res://ui/fonts/Xolonium-Regular.ttf" id="1_lg8jy"]
-[ext_resource type="Texture2D" uid="uid://djtixhl5ibn7l" path="res://assets/ui/Logo.png" id="2_x4ogh"]
-[ext_resource type="Texture2D" uid="uid://cbahksjier72w" path="res://assets/ui/Titel.png" id="3_dw2dv"]
-[ext_resource type="Texture2D" uid="uid://decq3uqgwldej" path="res://assets/ui/TitelPic.png" id="4_6y5ii"]
-[ext_resource type="Texture2D" uid="uid://neemictvo3im" path="res://assets/ui/resetButton/reset0.png" id="6_kbovd"]
-[ext_resource type="Texture2D" uid="uid://drt3a8ijlptc3" path="res://assets/ui/resetButton/reset1.png" id="7_8vkv4"]
-[ext_resource type="Texture2D" uid="uid://lxgtpj005luo" path="res://assets/ui/resetButton/reset2.png" id="8_7qjps"]
-[ext_resource type="Texture2D" uid="uid://c12ycyq4ag0gr" path="res://assets/ui/resetButton/reset3.png" id="9_rwf18"]
-[ext_resource type="Texture2D" uid="uid://iblbxefyeih" path="res://assets/ui/resetButton/reset4.png" id="10_5idga"]
+[ext_resource type="FontFile" uid="uid://b6cteqh0b84fx" path="res://ui/fonts/Xolonium-Regular.ttf" id="1_lg8jy"]
+[ext_resource type="Texture2D" uid="uid://b1on035e2b2mh" path="res://assets/ui/Logo.png" id="2_x4ogh"]
+[ext_resource type="Texture2D" uid="uid://5el4g2cldnxk" path="res://assets/ui/Titel.png" id="3_dw2dv"]
+[ext_resource type="Texture2D" uid="uid://bv6h1gj5jg07s" path="res://assets/ui/TitelPic.png" id="4_6y5ii"]
+[ext_resource type="Texture2D" uid="uid://lf5e0tr05p7b" path="res://assets/ui/resetButton/reset0.png" id="6_kbovd"]
+[ext_resource type="Texture2D" uid="uid://c2jigjuhl4g4a" path="res://assets/ui/resetButton/reset1.png" id="7_8vkv4"]
+[ext_resource type="Texture2D" uid="uid://cbilducca4e8w" path="res://assets/ui/resetButton/reset2.png" id="8_7qjps"]
+[ext_resource type="Texture2D" uid="uid://ch1410ux3fyi7" path="res://assets/ui/resetButton/reset3.png" id="9_rwf18"]
+[ext_resource type="Texture2D" uid="uid://dggi2umuw1mdg" path="res://assets/ui/resetButton/reset4.png" id="10_5idga"]
 
 [sub_resource type="GDScript" id="GDScript_8ftla"]
 script/source = "extends Node
@@ -33,6 +33,7 @@ func _process(_delta: float) -> void:
 func _on_start_button_pressed() -> void:
 	$MainMenu.hide()
 	start_button.hide()
+	SignalBus.next_level.emit()
 
 
 func _on_exit_button_pressed() -> void:
