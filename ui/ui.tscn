@@ -37,7 +37,7 @@ func _on_start_button_pressed() -> void:
 
 
 func _on_exit_button_pressed() -> void:
-	exit_button.hide()
+	get_tree().quit()
 	
 
 	
@@ -97,9 +97,9 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_05wma")
 text = "Fruits: "
 
 [node name="ResetButton" type="Button" parent="."]
-offset_left = 1024.0
+offset_left = 1795.0
 offset_top = 52.0
-offset_right = 1032.0
+offset_right = 1803.0
 offset_bottom = 60.0
 scale = Vector2(8.504, 7.968)
 focus_mode = 0
