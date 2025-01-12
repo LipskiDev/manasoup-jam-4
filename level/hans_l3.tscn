@@ -1,12 +1,12 @@
 [gd_scene load_steps=6 format=4 uid="uid://chjgx7o8ly3u"]
 
-[ext_resource type="PackedScene" uid="uid://bgq8jn8opptjx" path="res://level/template_level.tscn" id="1_3sfap"]
-[ext_resource type="PackedScene" uid="uid://b72f4u4t8ivi4" path="res://entities/Hazards/spike.tscn" id="2_j7nnq"]
-[ext_resource type="PackedScene" uid="uid://ma6sqpiuno4f" path="res://entities/pickups/fruit.tscn" id="3_gq71g"]
-[ext_resource type="PackedScene" uid="uid://bdxcig5vo4off" path="res://entities/Hazards/trapdoor.tscn" id="4_wlk5v"]
-[ext_resource type="PackedScene" uid="uid://roedj1oyntbx" path="res://entities/pickups/finish.tscn" id="5_0gg0i"]
+[ext_resource type="PackedScene" uid="uid://bgq8jn8opptjx" path="res://level/template_level.tscn" id="1_152f6"]
+[ext_resource type="PackedScene" uid="uid://ma6sqpiuno4f" path="res://entities/pickups/fruit.tscn" id="2_l4633"]
+[ext_resource type="PackedScene" uid="uid://b72f4u4t8ivi4" path="res://entities/Hazards/spike.tscn" id="3_7xon3"]
+[ext_resource type="PackedScene" uid="uid://bdxcig5vo4off" path="res://entities/Hazards/trapdoor.tscn" id="4_28eds"]
+[ext_resource type="PackedScene" uid="uid://roedj1oyntbx" path="res://entities/pickups/finish.tscn" id="5_570dl"]
 
-[node name="hans_l3" instance=ExtResource("1_3sfap")]
+[node name="hans_l3" instance=ExtResource("1_152f6")]
 
 [node name="Player" parent="." index="0"]
 position = Vector2(-47, -168)
@@ -17,55 +17,55 @@ tile_map_data = PackedByteArray("AAD7//L/AAACAAUAADD7//P/AAACAAUAADD7//T/AAACAAQ
 [node name="Fruits" type="Node2D" parent="." index="3"]
 scale = Vector2(0.5, 0.5)
 
-[node name="Fruit" parent="Fruits" index="0" instance=ExtResource("3_gq71g")]
+[node name="Fruit" parent="Fruits" index="0" instance=ExtResource("2_l4633")]
 position = Vector2(-1528, 240)
 scale = Vector2(0.75, 0.75)
 
-[node name="Fruit3" parent="Fruits" index="1" instance=ExtResource("3_gq71g")]
+[node name="Fruit3" parent="Fruits" index="1" instance=ExtResource("2_l4633")]
 position = Vector2(-1572, 226)
 scale = Vector2(0.75, 0.75)
 
-[node name="Fruit4" parent="Fruits" index="2" instance=ExtResource("3_gq71g")]
+[node name="Fruit4" parent="Fruits" index="2" instance=ExtResource("2_l4633")]
 position = Vector2(66, 38)
 scale = Vector2(1, 1)
 
-[node name="Fruit5" parent="Fruits" index="3" instance=ExtResource("3_gq71g")]
+[node name="Fruit5" parent="Fruits" index="3" instance=ExtResource("2_l4633")]
 position = Vector2(-1488, 240)
 scale = Vector2(0.75, 0.75)
 
-[node name="Fruit6" parent="Fruits" index="4" instance=ExtResource("3_gq71g")]
+[node name="Fruit6" parent="Fruits" index="4" instance=ExtResource("2_l4633")]
 position = Vector2(-1494, 186)
 scale = Vector2(0.75, 0.75)
 
-[node name="Fruit7" parent="Fruits" index="5" instance=ExtResource("3_gq71g")]
+[node name="Fruit7" parent="Fruits" index="5" instance=ExtResource("2_l4633")]
 position = Vector2(-1568, 184)
 scale = Vector2(0.75, 0.75)
 
-[node name="Fruit2" parent="Fruits" index="6" instance=ExtResource("3_gq71g")]
+[node name="Fruit2" parent="Fruits" index="6" instance=ExtResource("2_l4633")]
 position = Vector2(-102, 130)
 scale = Vector2(1, 1)
 
 [node name="Spikes" type="Node2D" parent="." index="4"]
 
-[node name="Spike" parent="Spikes" index="0" instance=ExtResource("2_j7nnq")]
+[node name="Spike" parent="Spikes" index="0" instance=ExtResource("3_7xon3")]
 position = Vector2(-24, 200)
 
-[node name="Spike2" parent="Spikes" index="1" instance=ExtResource("2_j7nnq")]
+[node name="Spike2" parent="Spikes" index="1" instance=ExtResource("3_7xon3")]
 position = Vector2(-8, 200)
 
-[node name="Spike3" parent="Spikes" index="2" instance=ExtResource("2_j7nnq")]
+[node name="Spike3" parent="Spikes" index="2" instance=ExtResource("3_7xon3")]
 position = Vector2(8, 200)
 
 [node name="trapdoors" type="Node2D" parent="." index="5"]
 
-[node name="Trapdoor" parent="trapdoors" index="0" instance=ExtResource("4_wlk5v")]
+[node name="Trapdoor" parent="trapdoors" index="0" instance=ExtResource("4_28eds")]
 position = Vector2(-95, -7)
 max_weight = 0
 
-[node name="Finish" parent="." index="6" instance=ExtResource("5_0gg0i")]
+[node name="Finish" parent="." index="6" instance=ExtResource("5_570dl")]
 position = Vector2(-331, 176)
 fruit_goal = 5
 
-[node name="Finish2" parent="." index="7" instance=ExtResource("5_0gg0i")]
+[node name="Finish2" parent="." index="7" instance=ExtResource("5_570dl")]
 position = Vector2(-897, 80)
 fruit_goal = 5
