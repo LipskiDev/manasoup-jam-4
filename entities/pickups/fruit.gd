@@ -2,10 +2,13 @@ class_name Fruit extends Pickup
 
 var frames
 
+@export var must_be_pineapple = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	frames = $Sprite2D.texture.get_width() / $Sprite2D.region_rect.size.x
 	var random_index = randi_range(0, frames - 1)
+	if must_be_pineapple:
+		random_index = 2
 	$Sprite2D.region_rect.position.x = random_index * $Sprite2D.region_rect.size.x
 
 

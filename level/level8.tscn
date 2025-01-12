@@ -16,6 +16,7 @@ tile_map_data = PackedByteArray("AAD+/wEAAAACAAIAAAD//wEAAAACAAIAAAAAAAEAAAACAAI
 
 [node name="Fruit" parent="." index="3" instance=ExtResource("2_46vhi")]
 position = Vector2(52, 8)
+must_be_pineapple = false
 
 [node name="Finish" parent="." index="4" instance=ExtResource("3_4q2c1")]
 position = Vector2(221, -83)

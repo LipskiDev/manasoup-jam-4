@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=4 uid="uid://cfiyob6py6vk3"]
+[gd_scene load_steps=5 format=4 uid="uid://qdvh343d7f5u"]
 
 [ext_resource type="PackedScene" uid="uid://bgq8jn8opptjx" path="res://level/template_level.tscn" id="1_u3asp"]
-[ext_resource type="Texture2D" uid="uid://cpj7ekg3kxa46" path="res://assets/background/background.png" id="2_nf8gn"]
+[ext_resource type="Texture2D" uid="uid://h3mtd2h1wb4u" path="res://assets/background/background.png" id="2_nf8gn"]
 [ext_resource type="PackedScene" uid="uid://b72f4u4t8ivi4" path="res://entities/Hazards/spike.tscn" id="3_leq77"]
 [ext_resource type="PackedScene" uid="uid://roedj1oyntbx" path="res://entities/pickups/finish.tscn" id="4_jsjg2"]
 
@@ -9,6 +9,7 @@
 
 [node name="Player" parent="." index="0"]
 position = Vector2(-142, 8)
+can_shit = false
 
 [node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" index="1"]
 modulate = Color(0.505344, 0.505344, 0.505344, 1)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=4 uid="uid://be6ndve7vgit8"]
+[gd_scene load_steps=3 format=4 uid="uid://2arxihmbg73w"]
 
 [ext_resource type="PackedScene" uid="uid://bgq8jn8opptjx" path="res://level/template_level.tscn" id="1_mrkfm"]
 [ext_resource type="PackedScene" uid="uid://roedj1oyntbx" path="res://entities/pickups/finish.tscn" id="3_llg3u"]
@@ -7,6 +7,7 @@
 
 [node name="Player" parent="." index="0"]
 position = Vector2(185, 103)
+can_shit = false
 
 [node name="Sprite2D" parent="ParallaxBackground/ParallaxLayer" index="0"]
 metadata/_edit_group_ = true
