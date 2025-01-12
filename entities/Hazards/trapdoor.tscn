@@ -1,13 +1,13 @@
 [gd_scene load_steps=5 format=3 uid="uid://bdxcig5vo4off"]
 
-[ext_resource type="Texture2D" uid="uid://bxnlrviv63ob4" path="res://assets/leaf.png" id="1_kwoy3"]
+[ext_resource type="Texture2D" uid="uid://bj7hhtdpn5rkh" path="res://assets/leaf.png" id="1_kwoy3"]
 [ext_resource type="Script" path="res://entities/Hazards/trapdoor.gd" id="1_o4rtb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gjebn"]
-size = Vector2(32, 12)
+size = Vector2(30, 12)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7edf6"]
-size = Vector2(32, 14)
+size = Vector2(30, 14)
 
 [node name="Trapdoor" type="Area2D"]
 script = ExtResource("1_o4rtb")
