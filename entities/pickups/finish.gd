@@ -24,10 +24,10 @@ func _on_current_weight(weight):
 		print("verpupp")
 		SignalBus.finished.emit()
 		$Sprite2D.region_rect.position.x = 64
-		$FinishTimer.one_shot
+		$FinishTimer.start()
 		
 
 
 func _on_finish_timer_timeout() -> void:
-	pass
-	SignalBus.next_Level
+	print("timer_finished")
+	SignalBus.next_level.emit()
