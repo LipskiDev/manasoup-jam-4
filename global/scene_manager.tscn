@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bw8f7qyed34gv"]
+[gd_scene load_steps=4 format=3 uid="uid://bw8f7qyed34gv"]
 
 [ext_resource type="Script" path="res://global/scene_manager.gd" id="1_yii0r"]
 [ext_resource type="PackedScene" uid="uid://bfy7oc4renck3" path="res://ui/ui.tscn" id="2_4fnop"]
+[ext_resource type="AudioStream" uid="uid://cepopescbejhq" path="res://assets/sfx/WorgSoundTrack-[AudioTrimmer.com]-5.mp3" id="3_jqbo6"]
 
 [node name="SceneManager" type="Node2D"]
 script = ExtResource("1_yii0r")
@@ -9,3 +10,8 @@ script = ExtResource("1_yii0r")
 [node name="current_scene" type="Node2D" parent="."]
 
 [node name="Ui" parent="." instance=ExtResource("2_4fnop")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_jqbo6")
+autoplay = true
+parameters/looping = true
