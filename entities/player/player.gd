@@ -40,11 +40,14 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-
+	
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+		$jump.play()
 		velocity.y = JUMP_VELOCITY
 		sprite.animation = "jump"
+		
+		$walk.stop()
 		sprite.play()
 		
 	if Input.is_action_just_pressed("increase_apple"):
@@ -73,8 +76,11 @@ func _physics_process(delta: float) -> void:
 	# Animation Sachen
 	if abs(velocity.x) > 0 and is_on_floor():
 		sprite.animation = "walk"
+		if (!$walk.playing):
+			$walk.play()
 		sprite.play()
 	if velocity.length() == 0:
+		$walk.stop()
 		sprite.stop()
 		
 	
@@ -137,6 +143,7 @@ func shit():
 func _on_fruit_eaten():
 	current_fruits += 1
 	update_jump_strength()
+	$devour.play()
 	SignalBus.current_weight.emit(current_fruits)
 	
 func _on_trapdoor_entered():

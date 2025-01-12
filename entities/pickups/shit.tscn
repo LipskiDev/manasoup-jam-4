@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://chn2bis8g4tb2"]
+[gd_scene load_steps=6 format=3 uid="uid://chn2bis8g4tb2"]
 
+[ext_resource type="AudioStream" uid="uid://b6xvpb14sft2t" path="res://assets/sfx/shit_splurt.mp3" id="2_c5gj7"]
 [ext_resource type="Texture2D" uid="uid://gnn0ei4x5gc5" path="res://assets/shite.png" id="2_kgs84"]
+[ext_resource type="AudioStream" uid="uid://cyuo1kwtfb8fc" path="res://assets/sfx/shit_fart1.mp3" id="3_8owrs"]
 
 [sub_resource type="GDScript" id="GDScript_0yo1y"]
 script/source = "extends RigidBody2D
@@ -12,6 +14,13 @@ func _ready() -> void:
 	frames = $Sprite2D.texture.get_width() / $Sprite2D.region_rect.size.x
 	var random_index = randi_range(0, frames - 1)
 	$Sprite2D.region_rect.position.x = random_index * $Sprite2D.region_rect.size.x
+	
+	var rand_sound = randi_range(0, 100)
+	if (rand_sound > 95):
+		$splurt.play()
+	else:
+		$fart.play()
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -36,3 +45,9 @@ region_rect = Rect2(0, 0, 16, 16)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_brbmb")
+
+[node name="splurt" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_c5gj7")
+
+[node name="fart" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_8owrs")
