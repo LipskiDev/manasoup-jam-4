@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=4 uid="uid://0cqq3317fcu8"]
 
-[ext_resource type="PackedScene" uid="uid://b5gq86i0wmiek" path="res://level/template_level.tscn" id="1_pdvpl"]
-[ext_resource type="PackedScene" uid="uid://ma6sqpiuno4f" path="res://entities/pickups/fruit.tscn" id="2_0nvom"]
-[ext_resource type="PackedScene" uid="uid://roedj1oyntbx" path="res://entities/pickups/finish.tscn" id="3_dts1k"]
+[ext_resource type="PackedScene" uid="uid://bgq8jn8opptjx" path="res://level/template_level.tscn" id="1_n284c"]
+[ext_resource type="PackedScene" uid="uid://ma6sqpiuno4f" path="res://entities/pickups/fruit.tscn" id="2_mlb36"]
+[ext_resource type="PackedScene" uid="uid://roedj1oyntbx" path="res://entities/pickups/finish.tscn" id="3_o1rh7"]
 
-[node name="TemplateLevel3" instance=ExtResource("1_pdvpl")]
+[node name="TemplateLevel3" instance=ExtResource("1_n284c")]
 
 [node name="Player" parent="." index="0"]
 position = Vector2(0, 8)
@@ -13,16 +13,16 @@ can_shit = false
 [node name="TileMapLayer" parent="." index="2"]
 tile_map_data = PackedByteArray("AAD9/wEAAAABAAIAAAD+/wEAAAACAAIAAAD//wEAAAACAAIAAAAAAAEAAAACAAIAAAABAAEAAAACAAIAAAACAAEAAAACAAIAAAADAAEAAAACAAIAAAAEAAEAAAACAAIAAAAFAAEAAAACAAIAAAAGAAEAAAACAAIAAAAHAAAAAAADAAEAAAAHAAEAAAADAAIAAAAHAP//AAADAAAAAAAIAP//AAAEAAAAAAAJAP//AAAEAAAAAAAKAP//AAAEAAAAAAAFAP3/AAAFAAIAAGAGAP3/AAAFAAEAAFAEAP3/AAAFAAIAAGALAP//AAADAAIAAAALAP7/AAADAAEAAAALAP3/AAADAAEAAAADAP3/AAAFAAIAAGACAP3/AAAFAAIAAGABAP3/AAAFAAIAAGAAAP3/AAAFAAIAAGD///3/AAAFAAIAAGD+//3/AAAFAAIAAGD9//3/AAAFAAMAAFD9//7/AAACAAIAAFD9////AAACAAIAAFD9/wAAAAACAAIAAFALAPz/AAADAAEAAAAOAPj/AAADAAEAAAAOAPf/AAADAAEAAAAOAPb/AAADAAIAAGD9//z/AAACAAIAAFD9//v/AAACAAIAAFD9//r/AAACAAIAAFD9//n/AAACAAIAAFD9//j/AAACAAIAAFAOAPn/AAADAAIAAAALAPn/AAADAAAAAAAMAPn/AAACAAIAAAANAPn/AAACAAIAAAALAPv/AAADAAEAAAALAPr/AAADAAEAAAD9//f/AAADAAEAADD9//b/AAADAAIAADD+//b/AAADAAEAAGD///b/AAADAAEAAGAAAPb/AAADAAEAAGABAPb/AAADAAEAAGACAPb/AAADAAEAAGADAPb/AAADAAEAAGAEAPb/AAADAAEAAGAFAPb/AAADAAEAAGAGAPb/AAADAAEAAGAHAPb/AAADAAEAAGAIAPb/AAADAAEAAGAJAPb/AAADAAEAAGAKAPb/AAADAAEAAGALAPb/AAADAAEAAGAMAPb/AAADAAEAAGANAPb/AAADAAEAAGD+/wAAAAAGAAQAAAD//wAAAAAEAAQAAAAAAAAAAAAGAAQAAAABAAAAAAADAAQAAAACAAAAAAAGAAQAAAADAAAAAAAGAAQAAAAEAAAAAAAGAAQAAAAFAAAAAAAFAAQAAAAGAAAAAAAGAAQAAAD+//z/AAADAAQAAAD///z/AAAGAAQAAAAAAPz/AAAEAAQAAAABAPz/AAAGAAQAAAACAPz/AAAEAAQAAAADAPz/AAAFAAQAAAAEAPz/AAAGAAQAAAAFAPz/AAAFAAQAAAAJAP7/AAAEAAQAAAAKAP7/AAADAAQAAAAIAP7/AAAEAAQAAAA=")
 
-[node name="Fruit" parent="." index="3" instance=ExtResource("2_0nvom")]
+[node name="Fruit" parent="." index="3" instance=ExtResource("2_mlb36")]
 position = Vector2(45, 5)
 
-[node name="Fruit2" parent="." index="4" instance=ExtResource("2_0nvom")]
+[node name="Fruit2" parent="." index="4" instance=ExtResource("2_mlb36")]
 position = Vector2(205, -121)
 
-[node name="Fruit3" parent="." index="5" instance=ExtResource("2_0nvom")]
+[node name="Fruit3" parent="." index="5" instance=ExtResource("2_mlb36")]
 position = Vector2(42, -59)
 
-[node name="Finish" parent="." index="6" instance=ExtResource("3_dts1k")]
+[node name="Finish" parent="." index="6" instance=ExtResource("3_o1rh7")]
 position = Vector2(144, -47)
 collision_layer = 6
 collision_mask = 6

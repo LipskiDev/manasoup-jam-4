@@ -1,10 +1,10 @@
 [gd_scene load_steps=2 format=4 uid="uid://sf5auey7twxn"]
 
-[ext_resource type="PackedScene" uid="uid://b5gq86i0wmiek" path="res://level/template_level.tscn" id="1_t380c"]
+[ext_resource type="PackedScene" uid="uid://bgq8jn8opptjx" path="res://level/template_level.tscn" id="1_t380c"]
 
 [node name="TemplateLevel" instance=ExtResource("1_t380c")]
 
-[node name="Camera2D" parent="Player" index="2"]
+[node name="Camera2D" parent="Player" index="4"]
 visible = false
 enabled = false
 

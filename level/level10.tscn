@@ -1,50 +1,50 @@
 [gd_scene load_steps=5 format=4 uid="uid://do0myo8gfqr76"]
 
-[ext_resource type="PackedScene" uid="uid://b5gq86i0wmiek" path="res://level/template_level.tscn" id="1_m7p2p"]
-[ext_resource type="Texture2D" uid="uid://xhn37618kpsh" path="res://assets/down-sign.png" id="2_jc4gx"]
-[ext_resource type="PackedScene" uid="uid://ma6sqpiuno4f" path="res://entities/pickups/fruit.tscn" id="2_ruu7a"]
-[ext_resource type="PackedScene" uid="uid://roedj1oyntbx" path="res://entities/pickups/finish.tscn" id="4_k28p1"]
+[ext_resource type="PackedScene" uid="uid://bgq8jn8opptjx" path="res://level/template_level.tscn" id="1_8aqyh"]
+[ext_resource type="PackedScene" uid="uid://ma6sqpiuno4f" path="res://entities/pickups/fruit.tscn" id="2_a6u2w"]
+[ext_resource type="Texture2D" uid="uid://chhrl80t3n7ar" path="res://assets/down-sign.png" id="3_rk0d6"]
+[ext_resource type="PackedScene" uid="uid://roedj1oyntbx" path="res://entities/pickups/finish.tscn" id="4_5hj87"]
 
-[node name="TemplateLevel3" instance=ExtResource("1_m7p2p")]
+[node name="TemplateLevel3" instance=ExtResource("1_8aqyh")]
 
-[node name="Fruit" parent="." index="0" instance=ExtResource("2_ruu7a")]
+[node name="Fruit" parent="." index="0" instance=ExtResource("2_a6u2w")]
 position = Vector2(41, 112)
 
-[node name="Fruit2" parent="." index="1" instance=ExtResource("2_ruu7a")]
+[node name="Fruit2" parent="." index="1" instance=ExtResource("2_a6u2w")]
 position = Vector2(41, 129)
 
-[node name="Fruit3" parent="." index="2" instance=ExtResource("2_ruu7a")]
+[node name="Fruit3" parent="." index="2" instance=ExtResource("2_a6u2w")]
 position = Vector2(41, 146)
 
-[node name="Fruit4" parent="." index="3" instance=ExtResource("2_ruu7a")]
+[node name="Fruit4" parent="." index="3" instance=ExtResource("2_a6u2w")]
 position = Vector2(41, 163)
 
-[node name="Fruit5" parent="." index="4" instance=ExtResource("2_ruu7a")]
+[node name="Fruit5" parent="." index="4" instance=ExtResource("2_a6u2w")]
 position = Vector2(41, 180)
 
-[node name="Fruit6" parent="." index="5" instance=ExtResource("2_ruu7a")]
+[node name="Fruit6" parent="." index="5" instance=ExtResource("2_a6u2w")]
 position = Vector2(55, 112)
 
-[node name="Fruit7" parent="." index="6" instance=ExtResource("2_ruu7a")]
+[node name="Fruit7" parent="." index="6" instance=ExtResource("2_a6u2w")]
 position = Vector2(55, 129)
 
-[node name="Fruit8" parent="." index="7" instance=ExtResource("2_ruu7a")]
+[node name="Fruit8" parent="." index="7" instance=ExtResource("2_a6u2w")]
 position = Vector2(55, 146)
 
-[node name="Fruit9" parent="." index="8" instance=ExtResource("2_ruu7a")]
+[node name="Fruit9" parent="." index="8" instance=ExtResource("2_a6u2w")]
 position = Vector2(55, 163)
 
-[node name="Fruit10" parent="." index="9" instance=ExtResource("2_ruu7a")]
+[node name="Fruit10" parent="." index="9" instance=ExtResource("2_a6u2w")]
 position = Vector2(55, 180)
 
-[node name="Fruit11" parent="." index="10" instance=ExtResource("2_ruu7a")]
+[node name="Fruit11" parent="." index="10" instance=ExtResource("2_a6u2w")]
 position = Vector2(667, 177)
 scale = Vector2(5, 5)
 
 [node name="Player" parent="." index="11"]
 can_shit = false
 
-[node name="Camera2D" parent="Player" index="2"]
+[node name="Camera2D" parent="Player" index="4"]
 zoom = Vector2(7.575, 7.575)
 limit_left = -75
 
@@ -57,7 +57,7 @@ texture_filter = 1
 position = Vector2(64, 7)
 rotation = -0.340339
 scale = Vector2(0.6875, 0.75)
-texture = ExtResource("2_jc4gx")
+texture = ExtResource("3_rk0d6")
 
-[node name="Finish" parent="." index="15" instance=ExtResource("4_k28p1")]
+[node name="Finish" parent="." index="15" instance=ExtResource("4_5hj87")]
 position = Vector2(785, 224)
