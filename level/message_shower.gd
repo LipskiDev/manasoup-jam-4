@@ -13,6 +13,5 @@ func _process(delta: float) -> void:
 	
 	
 func show_message(body: Node2D):
-	print("workds")
 	$Sprite2D.show()
 	pass
