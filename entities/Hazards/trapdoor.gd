@@ -20,7 +20,7 @@ func _on_body_exited(body: Node2D) -> void:
 
 
 func _on_weight_on_trapdoor(weight):
-	if weight > max_weight:
+	if weight > max_weight && stepped_on:
 		$StaticBody2D/CollisionShape2D.set_deferred("disabled", true)
 		$Sprite2D.region_rect.position.y = 16
 		$Sprite2D.region_rect.size.y = 32
