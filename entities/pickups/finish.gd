@@ -18,6 +18,7 @@ func _on_body_entered(body: Node2D) -> void:
 	
 func _on_body_exited(body: Node2D) -> void:
 	stepped_on = false
+	$Node2D/HungryText.visible = false
 	
 func _on_current_weight(weight):
 	if weight >= fruit_goal && stepped_on == true:
@@ -25,6 +26,8 @@ func _on_current_weight(weight):
 		SignalBus.finished.emit()
 		$Sprite2D.region_rect.position.x = 64
 		$FinishTimer.start()
+	elif weight < fruit_goal && stepped_on == true:
+		$Node2D/HungryText.visible = true
 		
 
 

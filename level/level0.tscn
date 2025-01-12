@@ -13,17 +13,14 @@ tile_map_data = PackedByteArray("AAD5/wUAAAACAAMAAAD6/wUAAAACAAMAAAD7/wUAAAACAAM
 [node name="Spike" parent="." index="3" instance=ExtResource("2_yqgyr")]
 position = Vector2(-152, -40)
 
-[node name="Fruit" parent="." index="4" instance=ExtResource("3_bd65k")]
-position = Vector2(175, -15)
-
-[node name="Fruit2" parent="." index="5" instance=ExtResource("3_bd65k")]
+[node name="Fruit2" parent="." index="4" instance=ExtResource("3_bd65k")]
 position = Vector2(-2, -106)
 
-[node name="Fruit3" parent="." index="6" instance=ExtResource("3_bd65k")]
+[node name="Fruit3" parent="." index="5" instance=ExtResource("3_bd65k")]
 position = Vector2(-106, -20)
 
-[node name="Fruit4" parent="." index="7" instance=ExtResource("3_bd65k")]
-position = Vector2(112, -25)
+[node name="Fruit4" parent="." index="6" instance=ExtResource("3_bd65k")]
+position = Vector2(-91, 26)
 
-[node name="Finish" parent="." index="8" instance=ExtResource("4_0c27n")]
-position = Vector2(173, -18)
+[node name="Finish" parent="." index="7" instance=ExtResource("4_0c27n")]
+position = Vector2(170, -16)
