@@ -13,7 +13,7 @@ position = Vector2(-47, -168)
 
 [node name="Camera2D" parent="Player" index="4"]
 limit_left = -950
-limit_top = 250
+limit_top = -250
 limit_bottom = 250
 
 [node name="TileMapLayer" parent="." index="2"]
