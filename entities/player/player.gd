@@ -14,7 +14,7 @@ var current_fruits : int = 0:
 		current_fruits = value
 		update_sprite()
 		
-var can_shit = true
+@export var can_shit = true
 
 @export var stage0: AnimatedSprite2D
 @export var stage1: AnimatedSprite2D
@@ -34,13 +34,19 @@ func _ready() -> void:
 	SignalBus.finished.connect(_on_finished)
 	sprite = stage0
 	sprite.show()
+	
+func _input(event):
+	if event.is_action_pressed("ui_cancel"):
+		get_tree().quit()
 
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+		
 	
+
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		$jump.play()
@@ -154,3 +160,4 @@ func _on_finish_entered():
 	
 func _on_finished():
 	sprite.hide()
+	self.process_mode = Node.PROCESS_MODE_DISABLED
