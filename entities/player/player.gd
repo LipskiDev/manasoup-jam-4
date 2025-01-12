@@ -34,6 +34,10 @@ func _ready() -> void:
 	SignalBus.finished.connect(_on_finished)
 	sprite = stage0
 	sprite.show()
+	
+func _input(event):
+	if event.is_action_pressed("ui_cancel"):
+		get_tree().quit()
 
 
 func _physics_process(delta: float) -> void:
