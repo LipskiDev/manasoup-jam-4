@@ -39,7 +39,7 @@ physics_layer_0/collision_layer = 129
 physics_layer_0/collision_mask = 129
 sources/0 = SubResource("TileSetAtlasSource_y5pay")
 
-[node name="TemplateLevel" type="Node2D"]
+[node name="TemplateLevel3" type="Node2D"]
 script = ExtResource("1_1d1tu")
 
 [node name="Player" parent="." instance=ExtResource("2_xnh1g")]

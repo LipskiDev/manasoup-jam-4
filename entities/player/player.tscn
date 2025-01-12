@@ -261,6 +261,7 @@ shape = SubResource("RectangleShape2D_r5ri6")
 [node name="Sprite" type="Node2D" parent="."]
 
 [node name="Stage0AnimatedSprite2D" type="AnimatedSprite2D" parent="Sprite"]
+visible = false
 texture_filter = 3
 position = Vector2(0, -5)
 sprite_frames = SubResource("SpriteFrames_pfw4m")
