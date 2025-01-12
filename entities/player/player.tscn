@@ -1,14 +1,14 @@
 [gd_scene load_steps=40 format=3 uid="uid://bs3xto5f1nk4"]
 
 [ext_resource type="Script" path="res://entities/player/player.gd" id="1_pl4tf"]
-[ext_resource type="Texture2D" uid="uid://c0gf4a0obof5m" path="res://assets/raupe/stage1/jump-Sheet.png" id="2_7f1pu"]
-[ext_resource type="Texture2D" uid="uid://dgpbj0h22xq18" path="res://assets/raupe/stage0/jump-Sheet.png" id="2_d4kuk"]
-[ext_resource type="Texture2D" uid="uid://b5wbdhmddv5os" path="res://assets/raupe/stage0/walk-Sheet.png" id="3_11yhb"]
-[ext_resource type="Texture2D" uid="uid://c67sdqj7vpwx5" path="res://assets/raupe/stage1/walk-Sheet.png" id="3_ud1qt"]
-[ext_resource type="Texture2D" uid="uid://bo27vfqsf3hct" path="res://assets/raupe/stage2/jump-Sheet.png" id="6_x6jd2"]
-[ext_resource type="Texture2D" uid="uid://xf6uu8bhd048" path="res://assets/raupe/stage2/walk-Sheet.png" id="7_o4ggf"]
-[ext_resource type="Texture2D" uid="uid://5vmlsjnd7hsh" path="res://assets/raupe/stage3/walk-Sheet.png" id="8_yu2ia"]
-[ext_resource type="Texture2D" uid="uid://bkx7m657g8687" path="res://assets/raupe/stage4/walk-Sheet.png" id="9_xegj1"]
+[ext_resource type="Texture2D" uid="uid://04fn0iygki15" path="res://assets/raupe/stage1/jump-Sheet.png" id="2_7f1pu"]
+[ext_resource type="Texture2D" uid="uid://bsnxgvo5dqydt" path="res://assets/raupe/stage0/jump-Sheet.png" id="2_d4kuk"]
+[ext_resource type="Texture2D" uid="uid://bqdji5wd3akev" path="res://assets/raupe/stage0/walk-Sheet.png" id="3_11yhb"]
+[ext_resource type="Texture2D" uid="uid://4h7oyihe4e6r" path="res://assets/raupe/stage1/walk-Sheet.png" id="3_ud1qt"]
+[ext_resource type="Texture2D" uid="uid://wnxdmmh1rjub" path="res://assets/raupe/stage2/jump-Sheet.png" id="6_x6jd2"]
+[ext_resource type="Texture2D" uid="uid://ccpssespuhli4" path="res://assets/raupe/stage2/walk-Sheet.png" id="7_o4ggf"]
+[ext_resource type="Texture2D" uid="uid://c41bwokreiovg" path="res://assets/raupe/stage3/walk-Sheet.png" id="8_yu2ia"]
+[ext_resource type="Texture2D" uid="uid://cfglxy0payhty" path="res://assets/raupe/stage4/walk-Sheet.png" id="9_xegj1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r5ri6"]
 size = Vector2(30, 14)
