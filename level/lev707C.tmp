@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=4 uid="uid://cac1aneuy22dj"]
+
+[ext_resource type="PackedScene" uid="uid://b5gq86i0wmiek" path="res://level/template_level.tscn" id="1_103qh"]
+[ext_resource type="PackedScene" uid="uid://ma6sqpiuno4f" path="res://entities/pickups/fruit.tscn" id="2_tmg3m"]
+[ext_resource type="PackedScene" uid="uid://roedj1oyntbx" path="res://entities/pickups/finish.tscn" id="3_0dugq"]
+[ext_resource type="Script" path="res://level/message_shower.gd" id="4_6l34i"]
+[ext_resource type="Texture2D" uid="uid://b0652dnopqha" path="res://assets/ShitTutorialMessage.png" id="5_phngl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gix25"]
+size = Vector2(42.715, 20)
+
+[node name="TemplateLevel3" instance=ExtResource("1_103qh")]
+
+[node name="TileMapLayer" parent="." index="2"]
+tile_map_data = PackedByteArray("AAD+/wEAAAACAAIAAAD//wEAAAACAAIAAAAAAAEAAAACAAIAAAABAAEAAAACAAIAAAACAAEAAAACAAIAAAADAAEAAAACAAIAAAAEAAEAAAADAAEAAFAFAAEAAAADAAEAAFD9/wEAAAABAAIAAAD9/wAAAAABAAEAAAD9////AAABAAIAAFD+////AAACAAIAADD/////AAACAAIAADAAAP//AAACAAIAADABAP//AAACAAIAADACAP//AAACAAIAADADAP//AAACAAIAADAEAP//AAABAAAAAFAEAP7/AAABAAEAAAAEAP3/AAABAAEAAAAGAAEAAAABAAEAAGAHAAEAAAABAAEAAGAIAAEAAAADAAIAAAAIAAAAAAADAAEAAAAIAP//AAADAAEAAAAIAP7/AAADAAEAAAAIAP3/AAADAAAAAAAJAP3/AAAEAAAAAAAKAP3/AAAEAAAAAAALAP3/AAAEAAAAAAAEAPz/AAABAAEAAAAEAPv/AAABAAEAAAAEAPr/AAABAAEAAAAEAPn/AAABAAEAAAAEAPj/AAABAAIAAFAFAPj/AAABAAEAAFAGAPj/AAABAAEAAFAHAPj/AAABAAEAAFAIAPj/AAABAAEAAFAJAPj/AAABAAEAAFAKAPj/AAABAAEAAFALAPj/AAABAAEAAFAMAPj/AAABAAEAAFANAPj/AAADAAIAAGANAPn/AAADAAEAAAANAPr/AAADAAEAAAANAPv/AAADAAEAAAANAPz/AAADAAEAAAANAP3/AAADAAIAAAAMAP3/AAACAAIAAAA=")
+
+[node name="Fruit" parent="." index="3" instance=ExtResource("2_tmg3m")]
+position = Vector2(24, 7)
+
+[node name="Finish" parent="." index="4" instance=ExtResource("3_0dugq")]
+position = Vector2(164, -81)
+fruit_goal = 0
+
+[node name="Area2D" type="Area2D" parent="." index="5"]
+position = Vector2(103, -52)
+script = ExtResource("4_6l34i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(2, 1)
+shape = SubResource("RectangleShape2D_gix25")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D" index="1"]
+visible = false
+texture = ExtResource("5_phngl")

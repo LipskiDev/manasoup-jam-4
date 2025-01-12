@@ -1,11 +1,11 @@
-[gd_scene load_steps=7 format=4 uid="uid://be6ndve7vgit8"]
+[gd_scene load_steps=7 format=4 uid="uid://807slcjpf0bt"]
 
-[ext_resource type="PackedScene" uid="uid://bgq8jn8opptjx" path="res://level/template_level.tscn" id="1_mrkfm"]
+[ext_resource type="PackedScene" uid="uid://b5gq86i0wmiek" path="res://level/template_level.tscn" id="1_mrkfm"]
 [ext_resource type="PackedScene" uid="uid://ma6sqpiuno4f" path="res://entities/pickups/fruit.tscn" id="2_no5sx"]
 [ext_resource type="PackedScene" uid="uid://roedj1oyntbx" path="res://entities/pickups/finish.tscn" id="3_llg3u"]
 [ext_resource type="PackedScene" uid="uid://bdxcig5vo4off" path="res://entities/Hazards/trapdoor.tscn" id="4_37vb4"]
 [ext_resource type="PackedScene" uid="uid://b72f4u4t8ivi4" path="res://entities/Hazards/spike.tscn" id="5_5mj2x"]
-[ext_resource type="Texture2D" uid="uid://c8jypenrvrsv7" path="res://assets/down-sign.png" id="6_3f4fn"]
+[ext_resource type="Texture2D" uid="uid://xhn37618kpsh" path="res://assets/down-sign.png" id="6_3f4fn"]
 
 [node name="TemplateLevel2" instance=ExtResource("1_mrkfm")]
 

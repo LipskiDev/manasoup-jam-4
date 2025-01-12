@@ -1,11 +1,11 @@
-[gd_scene load_steps=5 format=4 uid="uid://ditcwl5quoco2"]
+[gd_scene load_steps=5 format=4 uid="uid://73i4h488tq4b"]
 
-[ext_resource type="PackedScene" uid="uid://bgq8jn8opptjx" path="res://level/template_level.tscn" id="1_bgq4v"]
+[ext_resource type="PackedScene" uid="uid://b5gq86i0wmiek" path="res://level/template_level.tscn" id="1_bgq4v"]
 [ext_resource type="PackedScene" uid="uid://bdxcig5vo4off" path="res://entities/Hazards/trapdoor.tscn" id="2_omue2"]
 [ext_resource type="PackedScene" uid="uid://roedj1oyntbx" path="res://entities/pickups/finish.tscn" id="3_2plkn"]
 [ext_resource type="PackedScene" uid="uid://ma6sqpiuno4f" path="res://entities/pickups/fruit.tscn" id="4_awdxs"]
 
-[node name="TemplateLevel4" instance=ExtResource("1_bgq4v")]
+[node name="TemplateLevel5" instance=ExtResource("1_bgq4v")]
 
 [node name="Player" parent="." index="0"]
 position = Vector2(35, 103)

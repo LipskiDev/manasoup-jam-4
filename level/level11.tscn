@@ -1,12 +1,12 @@
-[gd_scene load_steps=9 format=4 uid="uid://6lseror2g27g"]
+[gd_scene load_steps=9 format=4 uid="uid://dsgwpd5r4e2ql"]
 
-[ext_resource type="PackedScene" uid="uid://bgq8jn8opptjx" path="res://level/template_level.tscn" id="1_5w1cm"]
+[ext_resource type="PackedScene" uid="uid://b5gq86i0wmiek" path="res://level/template_level.tscn" id="1_5w1cm"]
 [ext_resource type="PackedScene" uid="uid://bdxcig5vo4off" path="res://entities/Hazards/trapdoor.tscn" id="2_0ubyx"]
 [ext_resource type="PackedScene" uid="uid://roedj1oyntbx" path="res://entities/pickups/finish.tscn" id="3_gdv76"]
 [ext_resource type="PackedScene" uid="uid://b72f4u4t8ivi4" path="res://entities/Hazards/spike.tscn" id="4_ey73y"]
 [ext_resource type="PackedScene" uid="uid://ma6sqpiuno4f" path="res://entities/pickups/fruit.tscn" id="5_eacct"]
 [ext_resource type="Script" path="res://level/help_text.gd" id="6_ucbcl"]
-[ext_resource type="FontFile" uid="uid://bbl0gmmir2h43" path="res://ui/fonts/Xolonium-Regular.ttf" id="7_v67iv"]
+[ext_resource type="FontFile" uid="uid://b6cteqh0b84fx" path="res://ui/fonts/Xolonium-Regular.ttf" id="7_v67iv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l0ddv"]
 size = Vector2(50, 100)
