@@ -1,14 +1,16 @@
-[gd_scene load_steps=12 format=3 uid="uid://bfy7oc4renck3"]
+[gd_scene load_steps=14 format=3 uid="uid://bfy7oc4renck3"]
 
-[ext_resource type="FontFile" uid="uid://bbl0gmmir2h43" path="res://ui/fonts/Xolonium-Regular.ttf" id="1_lg8jy"]
-[ext_resource type="Texture2D" uid="uid://bs3c1gf8rq1i4" path="res://assets/ui/resetButton/reset0.png" id="6_kbovd"]
-[ext_resource type="Texture2D" uid="uid://4jnhvoqgqqxk" path="res://assets/ui/resetButton/reset1.png" id="7_8vkv4"]
-[ext_resource type="Texture2D" uid="uid://q77lc7adu6n3" path="res://assets/ui/resetButton/reset2.png" id="8_7qjps"]
-[ext_resource type="Texture2D" uid="uid://djq2smik1heny" path="res://assets/ui/Worg.png" id="9_5d6vm"]
-[ext_resource type="Texture2D" uid="uid://b6s1ex1fl4uls" path="res://assets/ui/resetButton/reset3.png" id="9_rwf18"]
-[ext_resource type="Texture2D" uid="uid://cvg1od7ylogun" path="res://assets/ui/resetButton/reset4.png" id="10_5idga"]
-[ext_resource type="Texture2D" uid="uid://b2ih4pvwcbepr" path="res://assets/StartGameButton.png" id="10_iip1p"]
-[ext_resource type="Texture2D" uid="uid://cjeowag2b8bqr" path="res://assets/ExitGameButton.png" id="11_rj6rc"]
+[ext_resource type="FontFile" uid="uid://ctd8ufd45h1c1" path="res://ui/fonts/Xolonium-Regular.ttf" id="1_lg8jy"]
+[ext_resource type="Texture2D" uid="uid://neemictvo3im" path="res://assets/ui/resetButton/reset0.png" id="6_kbovd"]
+[ext_resource type="Texture2D" uid="uid://drt3a8ijlptc3" path="res://assets/ui/resetButton/reset1.png" id="7_8vkv4"]
+[ext_resource type="Texture2D" uid="uid://lxgtpj005luo" path="res://assets/ui/resetButton/reset2.png" id="8_7qjps"]
+[ext_resource type="Texture2D" uid="uid://728ulc4pypqt" path="res://assets/ui/Worg.png" id="9_5d6vm"]
+[ext_resource type="Texture2D" uid="uid://c12ycyq4ag0gr" path="res://assets/ui/resetButton/reset3.png" id="9_rwf18"]
+[ext_resource type="Texture2D" uid="uid://iblbxefyeih" path="res://assets/ui/resetButton/reset4.png" id="10_5idga"]
+[ext_resource type="Texture2D" uid="uid://bi1o5pnpxsy7l" path="res://assets/StartGameButton.png" id="10_iip1p"]
+[ext_resource type="Texture2D" uid="uid://c8sqlwjfiyt0i" path="res://assets/ui/wasd.png" id="10_nvya8"]
+[ext_resource type="Texture2D" uid="uid://ddjtdbi7431c8" path="res://assets/ui/esc.png" id="11_gq005"]
+[ext_resource type="Texture2D" uid="uid://0pdj5aupapow" path="res://assets/ExitGameButton.png" id="11_rj6rc"]
 
 [sub_resource type="GDScript" id="GDScript_8ftla"]
 script/source = "extends Node
@@ -141,12 +143,30 @@ texture = ExtResource("11_rj6rc")
 
 [node name="TextureRect" type="TextureRect" parent="MainMenu"]
 texture_filter = 1
-offset_left = 524.0
-offset_top = 24.0
-offset_right = 716.0
-offset_bottom = 109.0
+offset_left = 604.0
+offset_top = 36.0
+offset_right = 796.0
+offset_bottom = 121.0
 scale = Vector2(4, 4)
 texture = ExtResource("9_5d6vm")
+
+[node name="TextureRect2" type="TextureRect" parent="MainMenu"]
+texture_filter = 1
+offset_left = 1552.0
+offset_top = 578.0
+offset_right = 1616.0
+offset_bottom = 626.0
+scale = Vector2(4, 4)
+texture = ExtResource("10_nvya8")
+
+[node name="TextureRect3" type="TextureRect" parent="MainMenu"]
+texture_filter = 1
+offset_left = 20.0
+offset_top = 32.0
+offset_right = 36.0
+offset_bottom = 48.0
+scale = Vector2(4, 4)
+texture = ExtResource("11_gq005")
 
 [connection signal="button_down" from="ResetButton" to="." method="_on_reset_button_button_down"]
 [connection signal="button_up" from="ResetButton" to="." method="_on_reset_button_button_up"]

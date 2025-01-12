@@ -14,7 +14,10 @@ func _ready() -> void:
 
 	
 func load_level(level_name: int):
-	
+	if level_name == 13:
+		level_name = 0
+		level_idx = 0
+		get_tree().change_scene_to_file("res://global/scene_manager.tscn")
 	var path = "%s%s.tscn" % [level_path, level_name] 
 	
 	for node in $current_scene.get_children():
