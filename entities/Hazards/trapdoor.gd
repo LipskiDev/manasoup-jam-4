@@ -2,11 +2,12 @@ extends Area2D
 
 @export var max_weight: int = 1
 var stepped_on = false
+@export var one_way: bool = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	SignalBus.weight_on_trapdoor.connect(_on_weight_on_trapdoor)
-
+	$StaticBody2D/CollisionShape2D.one_way_collision = one_way
 
 func _on_body_entered(body: Node2D) -> void:
 	stepped_on = true
