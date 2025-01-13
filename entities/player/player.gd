@@ -55,12 +55,12 @@ func _physics_process(delta: float) -> void:
 		$walk.stop()
 		sprite.play()
 		
-	#if Input.is_action_just_pressed("increase_apple"):
-	#	current_fruits += 1
-	#	update_jump_strength()
-	#if Input.is_action_just_pressed("decrease_apple") && current_fruits > 0:
-	#	current_fruits -= 1
-	#	update_jump_strength()
+	if Input.is_action_just_pressed("increase_apple"):
+		current_fruits += 1
+		update_jump_strength()
+	if Input.is_action_just_pressed("decrease_apple") && current_fruits > 0:
+		current_fruits -= 1
+		update_jump_strength()
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.

@@ -1,12 +1,12 @@
-[gd_scene load_steps=8 format=4 uid="uid://do0myo8gfqr76"]
+[gd_scene load_steps=8 format=4 uid="uid://d1fearpgtwuv0"]
 
 [ext_resource type="PackedScene" uid="uid://bgq8jn8opptjx" path="res://level/template_level.tscn" id="1_dnd50"]
-[ext_resource type="Texture2D" uid="uid://chhrl80t3n7ar" path="res://assets/down-sign.png" id="3_h8wos"]
+[ext_resource type="Texture2D" uid="uid://c8jypenrvrsv7" path="res://assets/down-sign.png" id="3_h8wos"]
 [ext_resource type="PackedScene" uid="uid://ma6sqpiuno4f" path="res://entities/pickups/fruit.tscn" id="3_lu72a"]
 [ext_resource type="PackedScene" uid="uid://roedj1oyntbx" path="res://entities/pickups/finish.tscn" id="4_i2u2l"]
-[ext_resource type="Texture2D" uid="uid://p43xpfm5a6mt" path="res://assets/ui/ThanksforplayingWorg.png" id="5_dilwl"]
-[ext_resource type="Texture2D" uid="uid://vixt35kw1gfi" path="res://assets/ui/made_by.png" id="6_0rn2t"]
-[ext_resource type="Texture2D" uid="uid://7q3nne1wh5o7" path="res://assets/ui/names.png" id="7_4sn1m"]
+[ext_resource type="Texture2D" uid="uid://cyiu00hwblu50" path="res://assets/ui/ThanksforplayingWorg.png" id="5_dilwl"]
+[ext_resource type="Texture2D" uid="uid://sgxxw14gxcvx" path="res://assets/ui/made_by.png" id="6_0rn2t"]
+[ext_resource type="Texture2D" uid="uid://8ha53ov682ex" path="res://assets/ui/names.png" id="7_4sn1m"]
 
 [node name="TemplateLevel3" instance=ExtResource("1_dnd50")]
 

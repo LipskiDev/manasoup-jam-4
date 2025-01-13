@@ -1,0 +1,76 @@
+[gd_scene load_steps=9 format=4 uid="uid://bnqt3wpwbhe3u"]
+
+[ext_resource type="PackedScene" uid="uid://bgq8jn8opptjx" path="res://level/template_level.tscn" id="1_oxkfv"]
+[ext_resource type="Script" path="res://level/area_2d.gd" id="2_1j2rw"]
+[ext_resource type="Texture2D" uid="uid://cwn1ovmfsqfxa" path="res://assets/level_tileset.png" id="3_d22bj"]
+[ext_resource type="AudioStream" uid="uid://cyw1xt68o08br" path="res://assets/sfx/devour.mp3" id="4_qc7r5"]
+[ext_resource type="Texture2D" uid="uid://djq2smik1heny" path="res://assets/ui/Worg.png" id="5_2vbr5"]
+[ext_resource type="Texture2D" uid="uid://j1jajvyol045" path="res://assets/ui/igg.png" id="6_jsmrr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rbkwl"]
+atlas = ExtResource("3_d22bj")
+region = Rect2(53.9463, 68.0885, 6.17786, 12.0038)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wwq0b"]
+size = Vector2(15.105, 20)
+
+[node name="TemplateLevel4" instance=ExtResource("1_oxkfv")]
+
+[node name="Player" parent="." index="0"]
+scale = Vector2(1.4, 1.4)
+
+[node name="Camera2D" parent="Player" index="4"]
+enabled = false
+zoom = Vector2(8, 8)
+limit_bottom = 125
+
+[node name="ParallaxLayer" parent="ParallaxBackground" index="0"]
+motion_offset = Vector2(300.205, 10)
+
+[node name="Sprite2D" parent="ParallaxBackground/ParallaxLayer" index="0"]
+scale = Vector2(0.36, 0.36)
+
+[node name="TileMapLayer" parent="." index="2"]
+tile_map_data = PackedByteArray("AAD1/wcAAAACAAIAAAD2/wcAAAACAAIAAAD3/wcAAAACAAIAAAD4/wcAAAACAAIAAAD5/wcAAAACAAIAAAD6/wcAAAACAAIAAAD7/wcAAAACAAIAAAD8/wcAAAACAAIAAAD9/wcAAAACAAIAAAD+/wcAAAACAAIAAAD//wcAAAACAAIAAAAAAAcAAAACAAIAAAABAAcAAAACAAIAAAACAAcAAAACAAIAAAADAAcAAAACAAIAAAAEAAcAAAACAAIAAAAFAAcAAAACAAIAAAAGAAcAAAACAAIAAAAHAAcAAAACAAIAAAAIAAcAAAACAAIAAAAJAAcAAAACAAIAAAAKAAcAAAACAAIAAAALAAcAAAACAAIAAAAMAAcAAAACAAIAAAANAAcAAAACAAIAAAD3/wYAAAAGAAQAAAD4/wYAAAAGAAQAAAD5/wYAAAAGAAQAAAD6/wYAAAAGAAQAAAD7/wYAAAAGAAQAAAD8/wYAAAAGAAQAAAD9/wYAAAAGAAQAAAD+/wYAAAAGAAQAAAD//wYAAAAGAAQAAAAAAAYAAAAGAAQAAAABAAYAAAAGAAQAAAACAAYAAAAGAAQAAAADAAYAAAAGAAQAAAAEAAYAAAAGAAQAAAAFAAYAAAAGAAQAAAAGAAYAAAAGAAQAAAAHAAYAAAAGAAQAAAAIAAYAAAAGAAQAAAAKAAYAAAAGAAQAAAALAAYAAAAGAAQAAAAMAAYAAAAGAAQAAAD1/wgAAAACAAMAAAD2/wgAAAACAAMAAAD3/wgAAAACAAMAAAD4/wgAAAACAAMAAAD5/wgAAAACAAMAAAD6/wgAAAACAAMAAAD7/wgAAAACAAMAAAD8/wgAAAACAAMAAAD9/wgAAAACAAMAAAD+/wgAAAACAAMAAAD//wgAAAACAAMAAAAAAAgAAAACAAMAAAABAAgAAAACAAMAAAACAAgAAAACAAMAAAADAAgAAAACAAMAAAAEAAgAAAACAAMAAAAFAAgAAAACAAMAAAAGAAgAAAACAAMAAAAHAAgAAAACAAMAAAAIAAgAAAACAAMAAAAJAAgAAAABAAMAAAAKAAgAAAACAAMAAAALAAgAAAACAAMAAAAMAAgAAAACAAMAAAANAAgAAAACAAMAAAAJAAYAAAAGAAQAAAA=")
+
+[node name="Camera2D" type="Camera2D" parent="." index="3"]
+position = Vector2(120, 98)
+zoom = Vector2(17.16, 17.16)
+
+[node name="Area2D" type="Area2D" parent="." index="4"]
+z_index = 6
+position = Vector2(140, 108)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("2_1j2rw")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D" index="0"]
+texture_filter = 3
+texture = SubResource("AtlasTexture_rbkwl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="1"]
+position = Vector2(-9.00001, 0)
+shape = SubResource("RectangleShape2D_wwq0b")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Area2D" index="2"]
+stream = ExtResource("4_qc7r5")
+
+[node name="Timer" type="Timer" parent="Area2D" index="3"]
+one_shot = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="Area2D" index="4"]
+visible = false
+z_index = -10
+texture_filter = 3
+position = Vector2(-29, -14)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("5_2vbr5")
+
+[node name="Igg" type="Sprite2D" parent="." index="5"]
+texture_filter = 3
+position = Vector2(163, 125)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("6_jsmrr")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="timeout" from="Area2D/Timer" to="Area2D" method="_on_timer_timeout"]
